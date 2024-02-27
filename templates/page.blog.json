@@ -1,0 +1,116 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_dcMJEX": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XJf6kQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Object",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XJf6kQ"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_Vtg9nH": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{{ page.title}}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_heEQFC": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7767cG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tags",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7767cG"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_RPij6J": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% if page.title == \"Liquid\" %}\n  This part is Liquid!\n{% else %}\n  Not liquid File!\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_8YwC4p": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_GeDiw7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Filter",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GeDiw7"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_hXqG4F": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{{ \"Hello world\" | capitalize }}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_dcMJEX",
+    "custom_liquid_Vtg9nH",
+    "rich_text_heEQFC",
+    "custom_liquid_RPij6J",
+    "rich_text_8YwC4p",
+    "custom_liquid_hXqG4F"
+  ]
+}
