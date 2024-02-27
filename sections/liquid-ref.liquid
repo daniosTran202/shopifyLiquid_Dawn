@@ -2,8 +2,34 @@
 
 {% if section.settings.liquid-checkbox == true %}
     <h2> Checkbox is Checked</h2>
+{% else %}
+    <h2>Checkbox not Checked</h2> 
 {% endif %}
 
+{% if section.settings.liquid-number > 0 %}
+    <h2> {{ section.settings.liquid-number }}</h2>
+{% endif %}
+
+
+<h1>Radio</h1>
+
+{% if section.settings.liquid-radio == "Man" %}
+    <h2>Man</h2>
+{%- else -%}
+    <h2>Woman</h2>
+{% endif %}
+    
+{{ section.settings.liquid-radio}}
+
+<h1>Range</h1>
+
+{{ section.settings.liquid-range }}
+
+<h1>Select</h1>
+
+{{section.settings.liquid-select}}
+
+<h1><Textarea>Content in Text Area : {{section.settings.liquid-textarea}}</Textarea></h1>
 
 
 {% schema %}
@@ -23,7 +49,67 @@
         {
             "id": "liquid-number",
             "type": "number",
-            "label": "add a Number"
+            "label": "Add a number"
+        },
+        {
+            "id": "liquid-radio",
+            "type": "radio",
+            "label": "A Radio for Shopify Liquid",
+            "options": [
+                {
+                    "value": "option-1",
+                    "label": "Man"
+                },
+                {
+                    "value": "option-2",
+                    "label": "Woman"
+                },
+                {
+                    "value": "option-3",
+                    "label": "Not given"
+                }
+            ]
+        },
+        {
+            "id": "liquid-range",
+            "type": "range",
+            "label": "Range",
+            "min": 10,
+            "step": 5,
+            "max": 100,
+            "default": "5"
+        },
+        {
+            "id": "liquid-textarea",
+            "type": "textarea",
+            "label": "Text Area"
+        },
+        {
+            "id": "liquid-select",
+            "type": "select",
+            "label": "Select from list",
+            "options": [
+                {
+                    "value": "Taycan",
+                    "label": "Taycan"
+                },
+                {
+                    "value": "Carrera",
+                    "label": "Carrera"
+                },
+                {
+                    "value": "911",
+                    "label": "911 Boxster"
+                },
+                {
+                    "value": "Cayenn",
+                    "label": "Cayenn"
+                },
+                {
+                    "value": "Macan",
+                    "label": "Macan"
+                }
+            ]
         }
     ],
         "presets": [
