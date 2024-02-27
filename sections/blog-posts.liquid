@@ -4,7 +4,7 @@
 {% assign blog = section.settings.new-blog %}
 
 {% unless blog.articles_count == 0 %}
-  {%  for article in blogs.articles  limit: section.settings.posts-range %}
+  {%  for article in blog.articles  limit: section.settings.posts-range %}
         <a href="{{ article.url }}">
             {{ article.image | image_url: width: 200 |  img_tag: 'image alt text', '', '450x450' }}
         </a>
