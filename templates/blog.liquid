@@ -1,0 +1,23 @@
+
+{% extends 'theme' %}
+
+{% block content %}
+  {% if blogs.size > 0 %}
+    <h1>Blog</h1>
+    <ul>
+      {% for blog in blogs %}
+        <li>
+          <a href="{{ blog.url }}">{{ blog.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No blogs found.</p>
+  {% endif %}
+  
+  {% if article %}
+    <h2>{{ article.title }}</h2>
+    <p>Published on {{ article.published_at | date: "%B %d, %Y" }}</p>
+    <div>{{ article.content }}</div>
+  {% endif %}
+{% endblock %}
