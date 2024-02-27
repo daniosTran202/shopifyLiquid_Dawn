@@ -1,0 +1,50 @@
+{{section.settings.posts-range}}
+
+
+{% comment %} {{ assign blog = section.settings.new-blog }} {% endcomment %}
+{{blog.articles_count}}
+
+
+ {% unless blog.articles_count == 0  %}
+    
+
+    {% for article in blog.articles limit: section.settings.posts-range %}
+        <div class="grid__item medium-up-one-third">
+            <a href="{{ article.url }}">
+                {{product | image_url: width: 200 | image_tag: sizes: '(min-width:1600px) 960px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' }}     
+            </a>
+            <br/>
+            <a href="{{ article.url }}">
+                {{article.title}}
+            </a>
+        </div>
+    {% endfor %}
+ {% endunless %}
+
+{% schema %}
+    {
+        "name": "New Blog Posts",
+        "settings": [
+            {
+                "id": "posts-range",
+                "type": "range",
+                "label": "Range",
+                "min": 3,
+                "max": 12,
+                "step": 3,
+                "default": 3
+            },
+            {
+                "id":"new-blog",
+                "type": "blog",
+                "label":"Blog"
+            }
+        ],
+        "presets": [
+            {
+                "name": "New Blog Posts",
+                "category": "Posts"
+            }
+        ]
+    }
+{% endschema %}
