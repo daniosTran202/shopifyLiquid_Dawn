@@ -13,23 +13,20 @@
 
 <h1>Radio</h1>
 
-{% comment %} {% if section.settings.liquid-radio == "Man" %}
+ {% if section.settings.liquid-radio == "Man" %}
     <h2>Man</h2>
 {%- else -%}
     <h2>Woman</h2>
-{% endif %} {% endcomment %}
+{% endif %} 
     
-{% comment %} {{ section.settings.liquid-radio}}
+{{ section.settings.liquid-radio}}
 
-<h1>Range</h1>
+<h1>Range : {{ section.settings.liquid-range }}</h1>
 
-{{ section.settings.liquid-range }}
 
-<h1>Select</h1>
+<h1>Select {{section.settings.liquid-select}}</h1>
 
-{{section.settings.liquid-select}}
-
-<h1><Textarea>Content in Text Area : {{section.settings.liquid-textarea}}</Textarea></h1> {% endcomment %}
+<h1>Content in Text Area : {{section.settings.liquid-textarea}}</h1> 
 
 
 {% schema %}
@@ -88,7 +85,7 @@
         {
             "id": "liquid-select",
             "type": "select",
-            "label": "Select from list",
+            "label": "Select from List",
             "options": [
                 {
                     "value": "taycan",
@@ -104,7 +101,7 @@
                 },
                 {
                     "value": "cayenn",
-                    "label": "Cayenn"
+                    "label": "Cayenne"
                 },
                 {
                     "value": "macan",
