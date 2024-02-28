@@ -43,7 +43,6 @@
 
 
 
-{{ section.blocks.settings.slide_image | image_url: width: 2880 | image_tag}}
 
  <div class="carousel-container" id="carousel-{{ section.id }}" data-ken-burns="{{ section.settings.enable_ken_burns }}" data-slide-timeout="{{ slide_timeout_ms }}">
   <div class="carousel-slides {% if section.settings.color_overlay_opacity != '0' %}with-overlay{% endif %}">
