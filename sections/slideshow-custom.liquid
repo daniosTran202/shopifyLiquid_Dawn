@@ -150,7 +150,7 @@
 
 {% schema %}
   {
-    "name": "Restaurant Slider",
+    "name": "SlideShow_Custom",
     "class": "carousel",
     "max_blocks": 9,
     "settings": [
@@ -345,6 +345,22 @@
           }
         ]
       }
+    ],
+"presets": [{
+  "name": "SlideShow_Custom",
+  "category": "Image",
+  "settings": {
+    "autoplay": true,
+    "autoplay_speed": "5000"
+  },
+  "blocks": [
+    {
+      "type": "image"
+    },
+    {
+      "type": "image"
+    }
     ]
+   }]
   }
 {% endschema %}
