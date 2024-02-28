@@ -1,5 +1,8 @@
 <section class="image-slider">
-    <h3 class="h3 text-center">
+    <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>    
+<h3 class="h3 text-center">
         {{section.settings.title}}
     </h3>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -9,7 +12,7 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
 
-  
+
   <div class="carousel-inner">
     {% for block in section.blocks %}
     <div class="carousel-item">
