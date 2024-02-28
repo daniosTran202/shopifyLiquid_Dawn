@@ -62,7 +62,7 @@
   <div class="slider">
     {% for slide in slides %}
       <div class="slide">
-        <img src="{{ slide.image | img_url: '600x' }}" alt="{{ slide.title }}">     
+        {{ slide.image | image_url: width: 300 | image_tag }}  
     <div class="slide-content">
           <h3>{{ slide.title }}</h3>
           <p>{{ slide.description }}</p>
@@ -78,7 +78,7 @@
   "name": "Slider Custom",
   "settings": [
     {
-      "type": "group",
+    "type":"text",
       "label": "Slides",
       "id": "slides",
       "max": 5,
@@ -107,6 +107,22 @@
           "type": "url",
           "label": "Button Link",
           "id": "button_link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image_Slider",
+      "settings": {
+        "title": "Image_Slider"
+      },
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
         }
       ]
     }
