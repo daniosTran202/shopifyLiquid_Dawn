@@ -217,8 +217,57 @@
         "label": "Slide link"
       }
     ]
+  },
+  {
+    "type": "video",
+    "name": "Video slide",
+    "settings": [
+      {
+        "type": "video_url",
+        "id": "video_url",
+        "label": "Video link",
+        "accept": ["youtube"],
+        "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type": "select",
+        "id": "video_type",
+        "label": "Style",
+        "options": [
+          {
+            "value": "chrome",
+            "label": "Image with play button"
+          },
+          {
+            "value": "background-chrome",
+            "label": "Background video with play button"
+          },
+          {
+            "value": "background",
+            "label": "Background video"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "Fallback when autoplaying video is not supported on mobile devices"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Video slide"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "Tell your brand's story through video and images"
+      }
+    ]
   }
-
 ],
 "presets": [{
   "name": "ImagesSlider",
@@ -233,9 +282,6 @@
     },
     {
       "type": "image"
-    },
-    {
-          "type": "buttons"
     }
     ]
    }]
