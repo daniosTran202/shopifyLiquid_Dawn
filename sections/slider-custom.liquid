@@ -1,0 +1,47 @@
+<section class="image-slider">
+
+</section>
+
+{% schema %}
+    {
+        "name": "Slider Customize",
+        "max_blocks": 10,
+        "settings": [
+            {
+                "id": "header",
+                "type": "text",
+                "label": "Image Slider"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Heading",
+                "default": "Slider title"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "image",
+                "name": "Image",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id":"image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "text",
+                        "id":"title",
+                        "label": "Image Title"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Slider Custom",
+                "category": "Image"
+            }
+        ]
+    }
+{% endschema %}
