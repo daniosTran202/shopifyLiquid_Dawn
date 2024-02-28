@@ -44,6 +44,11 @@
 {% assign slide_timeout_ms = slide_timeout | times: 1000 %}
 
 
+
+<h1>{{section.blocks.first}}</h1>
+<h1>{{section.blocks.last}}</h1>
+<h1>{{section.blocks.size}}</h1>
+
  <div class="carousel-container" id="carousel-{{ section.id }}" data-ken-burns="{{ section.settings.enable_ken_burns }}" data-slide-timeout="{{ slide_timeout_ms }}">
   <div class="carousel-slides {% if section.settings.color_overlay_opacity != '0' %}with-overlay{% endif %}">
     {% if section.blocks.size > 0 %}
@@ -349,6 +354,7 @@
     "presets": [{
       "name": "SlideShow_Custom",
       "category": "Image"
+      
     }]
   }
 {% endschema %}
