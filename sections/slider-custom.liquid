@@ -9,15 +9,16 @@
 
 
   <div class="slider-slicks">
+     <div>
     {% for block in section.blocks %}
-    <div>
+   
         {{ block.settings.image | image_url: width: 980, height: 800 | image_tag }}
         <div>
             <h5>{{block.settings.heading}}</h5>
             <button>Shop Now</button>
         </div>
-    </div>
     {% endfor %}
+    </div>
   </div>
 
 
