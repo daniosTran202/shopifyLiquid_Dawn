@@ -26,13 +26,26 @@
 {% schema %}
     {
         "name": "image-slider",
-        "class": "image-slider",
         "settings": [
             {
             "type": "image_picker",
             "id": "slider_images",
-            "label": "Image-slider"
+            "label": "Image-slider",
+            "max": 5
             }
-        ]
+        ],
+        "presets": [
+    {
+      "name": "slider_images",
+      "blocks": [
+        {
+          "type": "slide"
+        },
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
     }
 {% endschema %}
