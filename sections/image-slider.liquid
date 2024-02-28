@@ -1,0 +1,38 @@
+{{ 'section-image-slider.css' | asset_url | stylesheet_tag }}
+
+
+<div class="image-slider">
+    <div class="slider-container">
+
+        <div class="slider">
+
+            {% for block in section.blocks %}
+
+                <div class="slide">
+
+                    {{ block.settings.image | image_url: width: 2048 | image_tag }}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% schema %}
+    {
+        "name": "image-slider",
+        "class": "image-slider",
+        "settings": [
+            {
+            "type": "image_picker",
+            "id": "slider_images",
+            "label": "Image-slider"
+            }
+        ]
+    }
+{% endschema %}

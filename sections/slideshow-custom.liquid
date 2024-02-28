@@ -10,6 +10,28 @@
 {% endfor %}
 
 
+<div class="image-slider">
+    <div class="slider-container">
+
+        <div class="slider">
+
+            {% for block in section.blocks %}
+
+                <div class="slide">
+
+                    {{ block.settings.image | image_url: width: 2048 | image_tag }}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
 {% schema %}
 {
   "name": "Slideshow-custom",

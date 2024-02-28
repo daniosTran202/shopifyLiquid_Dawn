@@ -1,0 +1,35 @@
+.image-slider {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1000px; /* Adjust the maximum width as needed */
+
+  margin: 0 auto;
+}
+
+/* Styles for the slide container */
+
+.slider-container {
+  overflow: hidden;
+
+  position: relative;
+
+  width: 100%;
+
+  height: 300px; /* Adjust the height as needed */
+}
+
+/* Styles for individual slides */
+
+.slide {
+  float: left;
+
+  width: 100%;
+}
+
+.slide img {
+  max-width: 100%;
+
+  height: auto;
+}
