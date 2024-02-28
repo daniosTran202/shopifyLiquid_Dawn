@@ -1,24 +1,22 @@
 <script type="text/javascript">
     $(document).ready(function(){
-      $('.slider-slicks').slick({
-         rtl: true
-      });
+        console.log("Slider_slicks is ready ! gooo ");
+     $('.slider-slicks').slick()
     });
   </script>
 
 
 
   <div class="slider-slicks">
-     <div>
     {% for block in section.blocks %}
-   
-        {{ block.settings.image | image_url: width: 980, height: 800 | image_tag }}
+    <div>
+        {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
         <div>
             <h5>{{block.settings.heading}}</h5>
             <button>Shop Now</button>
         </div>
-    {% endfor %}
     </div>
+    {% endfor %}
   </div>
 
 
