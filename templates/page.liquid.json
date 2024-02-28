@@ -106,7 +106,19 @@
     "liquid_ref_aiUFJt": {
       "type": "liquid-ref",
       "settings": {
-        "liquid-ref": ""
+        "liquid-ref": "New Customer",
+        "liquid-checkbox": true,
+        "liquid-radio": "men",
+        "liquid-range": 20,
+        "liquid-textarea": "Welcome to my shop!",
+        "liquid-select": "cayenn"
+      }
+    },
+    "blog_posts_x3X4jc": {
+      "type": "blog-posts",
+      "settings": {
+        "posts-range": 3,
+        "new-blog": ""
       }
     }
   },
@@ -118,6 +130,7 @@
     "custom_liquid_npyRRw",
     "rich_text_pc8W8k",
     "custom_liquid_W8jnDN",
-    "liquid_ref_aiUFJt"
+    "liquid_ref_aiUFJt",
+    "blog_posts_x3X4jc"
   ]
 }
