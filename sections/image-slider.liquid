@@ -24,19 +24,38 @@
 
 
 {% schema %}
+{
+  "name": "Slideshow-custom",
+  "tag": "section",
+  "class": "slideshow",
+  "limit": 1,
+  "settings": [
     {
-        "name": "image-slider",
-        "settings": [
-            {
-            "type": "image_picker",
-            "id": "slider_images",
-            "label": "Image-slider",
-            "max": 5
-            }
-        ],
-        "presets": [
+      "type": "text",
+      "id": "title",
+      "label": "Slideshow"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+     {
+       "name": "Images",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         }
+       ]
+     }
+  ],
+  "presets": [
     {
-      "name": "slider_images",
+      "name": "Slider Images",
+      "settings": {
+        "title": "Slider Images"
+      },
       "blocks": [
         {
           "type": "slide"
@@ -46,6 +65,14 @@
         }
       ]
     }
-  ]
+  ],
+  "locales": {
+    "en": {
+      "title": "Slider Images"
+    },
+    "fr": {
+      "title": "Diaporama"
     }
+  }
+}
 {% endschema %}
