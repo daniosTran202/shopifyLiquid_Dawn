@@ -218,17 +218,36 @@
       }
     ]
   },
+   {
+      "type": "buttons",
+      "name": "btn-shopnow",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
+          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_1",
+          "default": false,
+          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
+        }
+      ]
+    },
   {
     "type": "video",
     "name": "Video slide",
     "settings": [
-      {
-        "type": "video_url",
-        "id": "video_url",
-        "label": "Video link",
-        "accept": ["youtube"],
-        "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
-      },
+     
       {
         "type": "select",
         "id": "video_type",
@@ -266,33 +285,9 @@
         "label": "Subheading",
         "default": "Tell your brand's story through video and images"
       }
+   
     ]
-  },
-     {
-      "type": "buttons",
-      "name": "btn-shopnow",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "text",
-          "id": "button_label_1",
-          "default": "Button label",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
-          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_1",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_1",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
-        }
-      ]
-    }
+  }
 ],
 "presets": [{
   "name": "ImagesSlider",
