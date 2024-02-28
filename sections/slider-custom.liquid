@@ -8,13 +8,14 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
+
+  
   <div class="carousel-inner">
     {% for block in section.blocks %}
-
     <div class="carousel-item">
-        {{ block.settings.image |  image_url: crop: 'region', width: 100, height: 100, crop_left: 32, crop_top: 32, crop_width: 512, crop_height: 512 | image_tag: sizes: '(min-width:1600px) 960px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' }}
+        {{ block.settings.image |  image_url: width: 500, height: 450 | image_tag: sizes: '(min-width:1600px) 960px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' }}
         <div class="carousel-caption d-none d-md-block">
-            <h5>{{section.settings.title}}</h5>
+            <h5>{{block.settings.heading}}</h5>
             <button>Shop Now</button>
         </div>
     </div>
@@ -48,134 +49,56 @@
             }
         ],
         "blocks": [
-
             {
-        "type": "slide",
-        "name": "t:sections.slideshow.blocks.slide.name",
-        "limit": 5,
-        "settings": [
-            {
-            "type": "image_picker",
-            "id": "image",
-            "label": "t:sections.slideshow.blocks.slide.settings.image.label"
-            },
-            {
-            "type": "inline_richtext",
-            "id": "heading",
-            "default": "Image slide",
-            "label": "t:sections.slideshow.blocks.slide.settings.heading.label"
-            },
-            {
-            "type": "select",
-            "id": "heading_size",
-            "options": [
-                {
-                "value": "h2",
-                "label": "t:sections.all.heading_size.options__1.label"
-                },
-                {
-                "value": "h1",
-                "label": "t:sections.all.heading_size.options__2.label"
-                },
-                {
-                "value": "h0",
-                "label": "t:sections.all.heading_size.options__3.label"
-                }
-            ],
-            "default": "h1",
-            "label": "t:sections.all.heading_size.label"
-            },
-            {
-            "type": "inline_richtext",
-            "id": "subheading",
-            "default": "Tell your brand's story through images",
-            "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
-            },
-            {
-            "type": "text",
-            "id": "button_label",
-            "default": "Button label",
-            "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
-            "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
-            },
-            {
-            "type": "url",
-            "id": "link",
-            "label": "t:sections.slideshow.blocks.slide.settings.link.label"
-            },
-            {
-            "type": "checkbox",
-            "id": "button_style_secondary",
-            "label": "t:sections.slideshow.blocks.slide.settings.secondary_style.label",
-            "default": false
-            },
-            {
-            "type": "select",
-            "id": "box_align",
-            "options": [
-                {
-                "value": "top-left",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__1.label"
-                },
-                {
-                "value": "top-center",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__2.label"
-                },
-                {
-                "value": "top-right",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__3.label"
-                },
-                {
-                "value": "middle-left",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__4.label"
-                },
-                {
-                "value": "middle-center",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__5.label"
-                },
-                {
-                "value": "middle-right",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__6.label"
-                },
-                {
-                "value": "bottom-left",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__7.label"
-                },
-                {
-                "value": "bottom-center",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__8.label"
-                },
-                {
-                "value": "bottom-right",
-                "label": "t:sections.slideshow.blocks.slide.settings.box_align.options__9.label"
-                }
-            ],
-            "default": "middle-center",
-            "label": "t:sections.slideshow.blocks.slide.settings.box_align.label",
-            "info": "t:sections.slideshow.blocks.slide.settings.box_align.info"
-            },
-            {
-            "type": "select",
-            "id": "text_alignment",
-            "options": [
-                {
-                "value": "left",
-                "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_1.label"
-                },
-                {
-                "value": "center",
-                "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_2.label"
-                },
-                {
-                "value": "right",
-                "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.option_3.label"
-                }
-            ],
-            "default": "center",
-            "label": "t:sections.slideshow.blocks.slide.settings.text_alignment.label"
+                "type": "slide",
+                "name": "slide",
+                "limit": 5,
+                "settings": [
+                    {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                    },
+                    {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "default": "Image slide",
+                    "label": "Heading"
+                    },
+                    {
+                    "type": "text",
+                    "id": "button_label",
+                    "default": "Button label",
+                    "label": "Button",
+                    "info": "Enter text to button"
+                    },
+                    {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Button URL"
+                    },
+                    {
+                    "type": "select",
+                    "id": "text_alignment",
+                    "options": [
+                        {
+                        "value": "left",
+                        "label": "left"
+                        },
+                        {
+                        "value": "center",
+                        "label": "center"
+                        },
+                        {
+                        "value": "right",
+                        "label": "rightl"
+                        }
+                    ],
+                    "default": "center",
+                    "label": "center"
+                    }
+                ]
             }
-        ]
-    }
             
         ],
         "presets": [
