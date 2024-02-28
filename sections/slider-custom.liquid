@@ -1,73 +1,24 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('.slider-slicks').slick({
+         rtl: true
+      });
+    });
+  </script>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
+
+
+  <div class="slider-slicks">
     {% for block in section.blocks %}
-    <div class="carousel-item">
+    <div>
         {{ block.settings.image | image_url: width: 980, height: 800 | image_tag }}
-        <div class="carousel-caption d-none d-md-block">
+        <div>
             <h5>{{block.settings.heading}}</h5>
             <button>Shop Now</button>
         </div>
     </div>
     {% endfor %}
   </div>
-
-
-
-   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
-
-
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-            {{ section.blocks.settings.image | image_url: width: 980, height: 800 | image_tag }}
-    </div>
-    <div class="carousel-item">
-            {{ section.blocks.settings.image | image_url: width: 980, height: 800 | image_tag }}
-    </div>
-    <div class="carousel-item">
-            {{ section.blocks.settings.image | image_url: width: 980, height: 800 | image_tag }}
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
- {% for block in section.blocks %}
-            {{ block.settings.image | image_url: width: 980, height: 800 | image_tag }}
-
-    <p>
-        {{block.settings.heading}}
-    </p>
- {% endfor  %}
-
 
 
 
