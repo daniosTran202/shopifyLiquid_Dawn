@@ -1,3 +1,46 @@
+
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+
+<style>
+    .container{
+  max-width:1200px;
+  margin:0 auto;
+}
+.slider{
+  display:flex;
+  .slides{
+    display:flex;
+    justify-content:center;
+  }
+}
+</style>
+
+<script>
+ $('.slider').slick({
+  arrows:true,
+  autoplaySpeed:1000
+});
+</script>
+
+<div class="container">
+ <div class="slider">
+
+   <div class="slides">
+    {{section.blocks.settings.image}} 
+   </div>
+
+   <div class="slides">
+    {{section.blocks.settings.image}}
+   </div>
+
+   <div class="slides">
+    {{section.blocks.settings.image}}
+   </div>
+ </div>
+</div>
 <script type="text/javascript">
     $('.demo-slick').slick({
     dots: true,
