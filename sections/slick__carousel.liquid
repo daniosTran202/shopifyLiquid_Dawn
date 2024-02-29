@@ -1,0 +1,258 @@
+
+
+<style>
+
+  .slider_wrap {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slider_item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slider_img_wrap {
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; 
+    position: relative;
+    overflow: hidden;
+  }
+
+  .content_wrap {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    padding: 20px;
+    color: #fff;
+  }
+
+  .image_slick {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider_title {
+    font-size: 30px; 
+    font-weight: 400; 
+    color: #262626; 
+    margin: 0 0 15px 0; 
+    line-height: 1.2; 
+    letter-spacing: 2px;
+  }
+
+
+    .button {
+      color: #262626;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 14px 40px;
+      letter-spacing: 1px;
+      background-color: rgba(0,0,0,0);
+      border: 1px solid transparent;
+      border-color: #262626;
+      display: inline-block;
+    }
+
+
+
+    .prev-btn-slick {
+      cursor: pointer;
+      position: absolute;
+      top: 20%;
+      left: 80%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      font-weight: bold;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      width: 60px;
+      height: 60px;
+      background: #ffffff80;
+      font-size: 16px;
+      color: #111;
+      text-align: center;
+    }
+    .next-btn-slick {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      font-weight: bold;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      width: 60px;
+      height: 60px;
+      background: #ffffff80;
+      font-size: 16px;
+      color: #111;
+      text-align: center;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+
+
+  .slick-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slick-dots li {
+    margin: 0 5px;
+  }
+
+</style>
+
+
+
+{% if section.blocks.size > 0 %}
+  <div class="slider_wrap" data-slick='{"autoplay": {{ section.settings.carousel_autoplay }}, "autoplaySpeed": {{ section.settings.autoplay_speed }}, "dots": {{ section.settings.carousel_dots }}, "arrows": {{ section.settings.carousel_arrows }}}'>
+    {% for block in section.blocks %}
+      <div class="slider_item">
+          <div class="slider_img_wrap">
+            {{ block.settings.slide_img | image_url: width: 500, height: 450 | image_tag: class: 'image_slick' }}
+          </div>
+        <div class="content_wrap">
+        <div class="slider_content">
+          <h2 class="slider_title">{{  block.settings.slide_title }}</h2>
+          <a href="{{ block.settings.slide_link }}" class="button">{{ block.settings.button_title }}</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": "Carousel",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type":"header",
+      "content":"Carousel option"
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_autoplay",
+      "label": "Enable autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_dots",
+      "label": "Enable dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_arrows",
+      "label": "Enable arrows",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "autoplay_speed",
+      "label": "Change slides every",
+        "options": [
+        { "value": "1000", "label": "1 seconds" },
+        { "value": "2000", "label": "2 seconds" },
+        { "value": "3000", "label": "3 seconds" },
+        { "value": "4000", "label": "4 seconds" },
+        { "value": "5000", "label": "5 seconds" },
+        { "value": "6000", "label": "6 seconds" },
+        { "value": "7000", "label": "7 seconds" },
+        { "value": "8000", "label": "8 seconds" },
+        { "value": "9000", "label": "9 seconds" },
+        { "value": "10000", "label": "10 seconds" }
+      ],
+      "default": "7000"
+    }
+  ],
+  "blocks": [
+    {
+    "type": "slide",
+    "name": "Slide",
+    "settings": [
+          {
+            "type": "text",
+            "id": "button_title",
+            "label": "Button title"
+          },
+          {
+            "type": "url",
+            "id": "slide_link",
+            "label": "Slide link"
+          },
+          {
+            "type": "text",
+            "id": "slide_title",
+            "label": "Slider title"
+          },
+          {
+            "type": "textarea",
+            "id": "slide_text",
+            "label": "Slide text"
+          },
+          {
+            "type": "image_picker",
+            "id": "slide_img",
+            "label": "Add img for slide"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Slick Carousel",
+            "category": "Image",
+            "blocks": [
+                {
+                "type": "slide"
+                },
+                {
+                "type": "slide"
+                }
+            ]
+        }
+      ]
+  }
+{% endschema %}
+
+{% javascript %}
+$('.slider_wrap').slick({
+  infinite: true,
+  speed: 200,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
+
+{% endjavascript %}

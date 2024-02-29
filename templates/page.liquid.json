@@ -120,6 +120,49 @@
         "posts-range": 3,
         "new-blog": ""
       }
+    },
+    "slider_custom_3cdKdp": {
+      "type": "slider-custom",
+      "blocks": {
+        "slide_TxUTHV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/organized-workspace.jpg",
+            "heading": "RECYCLED CAPSULE <\/br> PUFFER ANORAK PARKA",
+            "button_label": "Button label",
+            "link": "",
+            "text_alignment": "center"
+          }
+        },
+        "slide_Piqhqy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/watch-and-gloves-on-hand-pointing.jpg",
+            "heading": "Coat With Faux <\/br> Fur Collars",
+            "button_label": "Button label",
+            "link": "",
+            "text_alignment": "center"
+          }
+        },
+        "slide_DQp3AH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/laptop-coffee.jpg",
+            "heading": "Image slide",
+            "button_label": "Button label",
+            "link": "",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_TxUTHV",
+        "slide_Piqhqy",
+        "slide_DQp3AH"
+      ],
+      "settings": {
+        "title": "Slider title"
+      }
     }
   },
   "order": [
@@ -131,6 +174,7 @@
     "rich_text_pc8W8k",
     "custom_liquid_W8jnDN",
     "liquid_ref_aiUFJt",
-    "blog_posts_x3X4jc"
+    "blog_posts_x3X4jc",
+    "slider_custom_3cdKdp"
   ]
 }

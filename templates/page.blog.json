@@ -21,6 +21,7 @@
       "block_order": [
         "heading_XJf6kQ"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -32,6 +33,7 @@
     },
     "custom_liquid_Vtg9nH": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{{ page.title}}",
         "color_scheme": "",
@@ -53,6 +55,7 @@
       "block_order": [
         "heading_7767cG"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -64,6 +67,7 @@
     },
     "custom_liquid_RPij6J": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% if page.title == \"Liquid\" %}\n  This part is Liquid!\n{% else %}\n  Not liquid File!\n{% endif %}",
         "color_scheme": "",
@@ -85,6 +89,7 @@
       "block_order": [
         "heading_GeDiw7"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -96,11 +101,47 @@
     },
     "custom_liquid_hXqG4F": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{{ \"Hello world\" | capitalize }}",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "slick_carousel_yYkM3z": {
+      "type": "slick__carousel",
+      "blocks": {
+        "slide_w9it8G": {
+          "type": "slide",
+          "settings": {
+            "button_title": "Shop now",
+            "slide_link": "",
+            "slide_title": "Recycled Capsule  Puffer Anorak Parka",
+            "slide_text": "",
+            "slide_img": "shopify:\/\/shop_images\/h10-s-1.webp"
+          }
+        },
+        "slide_hWeKP9": {
+          "type": "slide",
+          "settings": {
+            "button_title": "Shop now",
+            "slide_link": "shopify:\/\/collections\/automated-collection",
+            "slide_title": "Code With Faux  Fur Collars",
+            "slide_text": "",
+            "slide_img": "shopify:\/\/shop_images\/h10-s-2.webp"
+          }
+        }
+      },
+      "block_order": [
+        "slide_w9it8G",
+        "slide_hWeKP9"
+      ],
+      "settings": {
+        "carousel_autoplay": true,
+        "carousel_dots": true,
+        "carousel_arrows": true,
+        "autoplay_speed": "3000"
       }
     }
   },
@@ -111,6 +152,7 @@
     "rich_text_heEQFC",
     "custom_liquid_RPij6J",
     "rich_text_8YwC4p",
-    "custom_liquid_hXqG4F"
+    "custom_liquid_hXqG4F",
+    "slick_carousel_yYkM3z"
   ]
 }
