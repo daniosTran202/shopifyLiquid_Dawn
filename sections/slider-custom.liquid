@@ -1,17 +1,48 @@
 <style>
 
-    * {box-sizing: border-box}
-.mySlides1, .mySlides2 {display: none}
-img {vertical-align: middle;}
+* {box-sizing: border-box}
+  .img-slide{
+      width: 100%;
+      vertical-align: middle;
+      height: fit-content;
+  }
+  .mySlides{
+    position: relative;
+  }
+  .content__slider{
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    
+  }
 
-/* Slideshow container */
+  .btn__slider{
+    color: #262626;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 14px 40px;
+    letter-spacing: 1px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid transparent;
+    border-color: #262626;
+    display: inline-block;
+  }
+
+  .heading__slider{
+    font-size: 30px; 
+    font-weight: 400; 
+    color: #262626; 
+    margin: 0 0 15px 0; 
+    line-height: 1.2; 
+    letter-spacing: 2px;
+  }
+
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-/* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -19,21 +50,23 @@ img {vertical-align: middle;}
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
   font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  width: 60px;
+  height: 60px;
+  background: #ffffff80;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a grey background color */
 .prev:hover, .next:hover {
   background-color: #f1f1f1;
   color: black;
@@ -43,20 +76,18 @@ img {vertical-align: middle;}
 
 
 <div class="slideshow-container">
-  <div class="mySlides">
      {% for block in section.blocks %}
-    <div>
-        {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
-        <div>
-            <h5>{{block.settings.heading}}</h5>
-            <button>Shop Now</button>
-        </div>
+        <div class="mySlides">  
+            {{ block.settings.image | image_url: width: 500 | image_tag: class: 'img-slide', sizes: '(min-width:1600px) 960px, (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)' }}
+          <div class="content__slider">  
+          <h3 class="heading__slider">{{block.settings.heading}}</h3>
+            <button class="btn__slider">Shop Now</button>
+          </div>
     </div>
     {% endfor %}
-  </div>
-
-  <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+    
+    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
 </div>
 
 <script>
