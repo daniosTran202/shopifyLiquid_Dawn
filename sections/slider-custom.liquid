@@ -13,11 +13,6 @@
 
 
 
-<script type="text/javascript">
-    $(document).ready(function(){
-     $('.demo-slick').slick()
-    });
-  </script>
 
    <div class="demo-slick">
     {% for block in section.blocks %}
@@ -32,7 +27,7 @@
 
 
 
-  <div class="slider-slicks">
+  {% comment %} <div class="slider-slicks">
     {% for block in section.blocks %}
     <div>
         {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
@@ -42,7 +37,7 @@
         </div>
     </div>
     {% endfor %}
-  </div>
+  </div> {% endcomment %}
 
 
 
