@@ -1,7 +1,14 @@
 <script type="text/javascript">
-    $(document).ready(function(){
-     $('.slider-slicks').slick()
-    });
+    $('.demo-slick').slick({
+    dots: true,
+    infinite: true,
+    speed: 700,
+    autoplay:true,
+    autoplaySpeed: 2000,
+    arrows:false,
+    slidesToShow: 1,
+    slidesToScroll: 1
+ });
   </script>
 
 
@@ -13,9 +20,13 @@
   </script>
 
    <div class="demo-slick">
-    <div>your content</div>
-    <div>your content</div>
-    <div>your content</div>
+    {% for block in section.blocks %}
+    <div>
+        {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
+            <h5>{{block.settings.heading}}</h5>
+            <button>Shop Now</button>
+    </div>
+    {% endfor %}
   </div>
 
 
