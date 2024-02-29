@@ -1,16 +1,37 @@
 
 
 <script type="text/javascript">
-    $('.slider-slicks').slick({
-    dots: true,
+    $(document).ready(function () {
+    setTimeout(function () {
+
+$(".slider-slicks").slick({
     infinite: true,
-    speed: 700,
-    autoplay:true,
-    autoplaySpeed: 2000,
-    arrows:false,
-    slidesToShow: 1,
-    slidesToScroll: 1
- });
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow:
+        "<div class='slick-prev'><i class='fas fa-angle-left'></i></div>",
+    nextArrow:
+        "<div class='slick-next'><i class='fas fa-angle-right'></i></div>",
+    autoplay: false,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 420,
+            settings: {
+                slidesToShow: 1
+            }
+        }
+    ],
+});
+}, 3000); // Change the delay time (in milliseconds) as needed
+});
   </script>
 
 
@@ -18,8 +39,8 @@
 
 
 
-
- <div class="slider-slicks">
+{% if section.blocks.size > 0 %}
+     <div class="slider-slicks">
     {% for block in section.blocks %}
     <div>
         {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
@@ -29,7 +50,10 @@
         </div>
     </div>
     {% endfor %}
-</div> 
+    </div> 
+{% endif %}
+
+
 
 
 
@@ -115,3 +139,7 @@
         ]
     }
 {% endschema %}
+
+
+
+
