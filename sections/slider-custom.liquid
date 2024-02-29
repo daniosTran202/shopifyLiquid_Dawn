@@ -41,46 +41,9 @@
    </div>
  </div>
 </div>
-<script type="text/javascript">
-    $('.demo-slick').slick({
-    dots: true,
-    infinite: true,
-    speed: 700,
-    autoplay:true,
-    autoplaySpeed: 2000,
-    arrows:false,
-    slidesToShow: 1,
-    slidesToScroll: 1
- });
-  </script>
 
 
 
-
-   <div class="demo-slick">
-    {% for block in section.blocks %}
-    <div>
-        {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
-            <h5>{{block.settings.heading}}</h5>
-            <button>Shop Now</button>
-    </div>
-    {% endfor %}
-  </div>
-
-
-
-
-  {% comment %} <div class="slider-slicks">
-    {% for block in section.blocks %}
-    <div>
-        {{ block.settings.image | image_url: width: 600, height: 450 | image_tag }}
-        <div>
-            <h5>{{block.settings.heading}}</h5>
-            <button>Shop Now</button>
-        </div>
-    </div>
-    {% endfor %}
-  </div> {% endcomment %}
 
 
 
