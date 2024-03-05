@@ -1,0 +1,223 @@
+<style>
+
+  *,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 1200px){
+    .container {
+        width: 1200px;
+    }
+    .content_slideshow .container {
+        width: 100%;
+        max-width: 1200px;
+    }
+    
+  }
+  @media screen and (max-width: 992px){
+    .container {
+        width: 970px;
+    }
+    
+  }
+  @media screen and (max-width: 768px){
+    .container {
+        width: 750px;
+    }
+    
+  }
+  .container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+
+  .slide_show_toro .item {
+    position: relative;
+    overflow: hidden;
+}
+
+  .content_slideshow {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+  .align-right_content {
+    float: right;
+    margin-right: 8%;
+}
+
+.g-content-slider {
+    animation-delay: 1s;
+}
+.text-center {
+    text-align: center;
+}
+
+  .btn_slideshow_toro{
+    color: #262626; 
+    font-size: 12px; 
+    font-weight: 600; 
+    padding: 14px 40px; 
+    letter-spacing: 1px; 
+    background-color: rgba(0,0,0,0); 
+    border: 1px solid transparent; 
+    border-color: #262626; 
+    display: inline-block;
+    text-decoration:none;
+  }
+  
+  .btn_slideshow_toro:hover{
+    background: #fc4f4f;
+    color: white;
+    outline:#fc4f4f;
+    border: 1px solid #fc4f4f;
+    transition: all 250ms ease-out;
+  }
+
+  .heading_content_font {
+    font-size: 30px; 
+    font-weight: 400; 
+    color: #262626; 
+    margin: 0 0 15px 0; 
+    line-height: 1.2; 
+    letter-spacing: 2px;
+  }
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: #000;
+  outline: none;
+  background: transparent;
+}
+
+
+.slick-arrow {
+  color: #111;
+  width: 60px;
+  height: 60px;
+  background: #ffffff80;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  padding: 20px 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  z-index: 5;
+  transition: all 0.2s linear;
+}
+
+.slick-arrow:hover {
+  background-color: white;
+  color: #111;
+}
+.slick-prev{
+  left: 0;
+}
+  
+.slick-next {
+  right: 0;
+}
+.slick-prev:before, .slick-next:before {
+  display:none;
+}
+
+</style>
+
+
+<script>
+  $(document).ready(function () {
+  $(".slideshow_toro").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+    draggable: false,
+    prevArrow: `<button type='button' class='slick-prev slick-arrow'><ion-icon name="arrow-back-outline"></ion-icon></button>`,
+    nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="arrow-forward-outline"></ion-icon></button>`,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          infinite: false,
+        },
+      },
+    ],
+  });
+});
+</script>
+
+
+  <div class="slideshow_toro-homepage" style="margin: 0 0 30px 0;">
+    <div class="container">
+      <div class="slideshow_toro">
+        
+        <div class="item" style="background: url('//globo-toro.myshopify.com/cdn/shop/files/h10-s-1.jpg?v=1613744504') center center no-repeat;background-size: cover; min-height: 670px;position:relative">
+          <div class="content_slideshow">
+            <div class="container">
+              <div class="g-content-slider align-right_content text-center" style="max-width: 660px;">
+                 <h2 class="heading_content_font" >RECYCLED CAPSULE <br>PUFFER ANORAK PARKA<br><br></h2>
+                 <a href="" class="btn_slideshow_toro" >SHOP NOW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="item" style="background: url('//globo-toro.myshopify.com/cdn/shop/files/h10-s-2.jpg?v=1613744504') center center no-repeat;background-size: cover; min-height: 670px;position:relative">
+          <div class="content_slideshow">
+            <div class="container">
+              <div class="g-content-slider align-right_content text-center" style="max-width: 660px;">
+              	<h2 class="heading_content_font" >COAT WITH FAUX FUR<br> COLLAR <br> <br></h2>
+                <a href="" class="btn_slideshow_toro" >SHOP NOW</a> 
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "SlideShow Toro",
+    "settings": [
+      
+    ],
+    "presets": [
+      {
+        "name": "SlideShow Toro"
+      }
+    ]
+  }
+{% endschema %}
+

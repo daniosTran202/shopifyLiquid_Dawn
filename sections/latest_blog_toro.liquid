@@ -1,0 +1,211 @@
+<style>
+* {
+    box-sizing: border-box;
+}
+
+
+ .toro_post_bog{
+  margin: 0px 0px 50px; 
+   visibility: visible; 
+   animation-name: fadeIn;
+  }
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.liquid-header {
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.blog_heading_style:before, .blog_heading_style:after {
+  content: "";
+  width: 75px;
+  height: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #0000001a;
+}
+
+.blog_heading_style span {
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  border-color: #0000001a;
+  padding: 15px 50px;
+  display: inline-block;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+article {
+    display: block;
+}
+@media screen and (min-width: 769px) {
+    .col-md-6{
+    width: 50%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.blog_item{
+  margin-bottom: 20px;
+}
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+
+.blog_item_infor {
+  background-color: #fff;
+  padding: 20px 0;
+  color: #777;
+}
+
+.blog_item_title {
+  margin: 0 0 15px;
+  font-weight: 600;
+  font-size: 32px;
+  font-family: "Alegreya",Sans-serif;
+}
+.blog_item_title a {
+  text-decoration: none;
+  color: #262626;
+}
+.blog_item_title:hover, .blog_item_title a:hover{
+  transition: all .35s ease ;
+  color: #fc4f4f;
+}
+
+
+.blog_author {
+  margin-bottom: 5px;
+}
+
+  
+.blog_author span {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.blog_item_description {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding: 5px 0 10px;
+  color: #777;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+
+.blog_item_btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: #262626;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: #262626;
+  transition: all .25s ease-out;
+}
+.blog_item_btn:hover {
+  transition: all .35s ease ;
+  color: #fc4f4f;
+  border-color: #fc4f4f;
+}
+
+  
+</style>
+
+<div class="liquid-section toro_blog_grid"><div class="toro_post_bog" >
+  <div class="container">
+    <div class="liquid-header text-center">
+      <h3 class="blog_heading_style" style="font-size: 20px; letter-spacing: 2px;">
+        <span>LATEST BLOG</span>
+      </h3>
+    </div>
+    <div class="row">
+        <article class="col-md-6 col-sm-6 col-xs-12">
+          <div class="blog_item">
+            <div class="blog_item_image">
+              <a href="">
+                <img class="lazy" src="//globo-toro.myshopify.com/cdn/shop/articles/img-14-570x280_570x_crop_center.progressive.jpg" alt="Mix &amp; Match - Fall Neutrals" style="display: inline-block;">
+              </a>
+            </div>
+            <div class="blog_item_infor">
+              <h3 class="blog_item_title"><a href="">Mix &amp; Match - Fall Neutrals</a></h3>
+              <div class="blog_author">
+                <span>by Globo.io, </span><span class="posted-on"><time datetime="2023-03-01T07:52:00Z">March 01, 2023</time></span>
+              </div>
+              <div class="blog_item_description">
+                All the rumors have finally died down and many skeptics have tightened their lips, the iPod does support video format now on…
+              </div>
+              <a href="" class="blog_item_btn">Read more</a>
+            </div>
+          </div>
+        </article>
+      	
+        <article class="col-md-6 col-sm-6 col-xs-12">
+          <div class="blog_item">
+            
+            <div class="blog_item_image">
+              <a href="">
+                <img class="lazy" src="//globo-toro.myshopify.com/cdn/shop/articles/img-13-570x280_570x_crop_center.progressive.jpg" alt="The 5 Things I’m Loving Lately">
+              </a>
+            </div>
+            
+            <div class="blog_item_infor">
+              <h3 class="blog_item_title"><a href="">The 5 Things I’m Loving Lately</a></h3>
+              <div class="blog_author">
+                <span>by Globo.io, </span><span class="posted-on"><time datetime="2023-03-01T07:52:00Z">March 01, 2023</time></span>
+              </div>
+              <div class="blog_item_description">
+                
+                All the rumors have finally died down and many skeptics have tightened their lips, the iPod does support video format now on…
+                
+              </div>
+              <a href="" class="blog_item_btn">Read more</a>
+            </div>
+          </div>
+        </article>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Latest Blog Toro",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Latest Blog Toro"
+        
+      }
+    ]
+  }
+{% endschema %}

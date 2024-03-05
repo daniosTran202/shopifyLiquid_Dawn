@@ -1,0 +1,89 @@
+
+
+<style> 
+  @media screen and (min-width: 1200px){
+    .container {
+        width: 1200px;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .container {
+        width: 970px;
+    }
+  }
+  
+  .container {
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+  
+  
+  .toro_banner {
+    padding-top: 12%;
+    padding-bottom: 12%;
+    
+  }
+  
+  .single_banner_background {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  .toro_only_banner h2 {
+    margin: 0;
+    font-size: 64px;
+    color: #ffffff;
+    line-height: 1;
+    font-weight: 400;
+    padding: 20px 30px;
+  }
+  .toro_only_banner  {
+    margin: 0px 0px 50px; 
+    visibility: visible; 
+    animation-name: fadeIn;
+  }
+
+</style>
+
+<div class="liquid-section toro_single_banner">
+  <div class="toro_only_banner">
+  <div class="container">
+    <div class="toro_banner single_banner_background" style="display: block; 
+  background-image: url(&quot;//globo-toro.myshopify.com/cdn/shop/files/home-10-banner-mobile-02_1920x.progressive.jpg&quot;);">
+      <div class="container text-center">
+        <h2>CABLE - KNIT<br> NEW ARRIVAL</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+{% schema %}
+  {
+    "name": "Image Banner Toro",
+    "settings": [
+      {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner Images"
+      }
+    ],
+
+   
+    "presets": [
+      {
+        "name": "Image Banner Toro"
+        
+      }
+    ]
+  }
+{% endschema %}

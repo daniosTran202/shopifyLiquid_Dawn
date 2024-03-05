@@ -2,159 +2,173 @@
 
 <style>
 
-  .slider_wrap {
-    margin-top: 20px;
-    width: 100%;
-    height: 0;
-    padding-bottom: 75%;
-    position: relative;
-    overflow: hidden;
+.slider_wrap {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider_item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider_img_wrap {
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; 
+  position: relative;
+  overflow: hidden;
+}
+
+.content_wrap {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-50%);
+  padding: 20px;
+  color: #fff;
+}
+
+.image_slick {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider_title {
+  font-size: 30px; 
+  font-weight: 400; 
+  color: #262626; 
+  margin: 0 0 15px 0; 
+  line-height: 1.2; 
+  letter-spacing: 2px;
+}
+
+.button {
+    color: #262626;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 40px;
+    letter-spacing: 1px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid transparent;
+    border-color: #262626;
+    display: inline-block;
   }
 
-  .slider_item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .slider_img_wrap {
-    width: 100%;
-    height: 0;
-    padding-bottom: 75%; 
-    position: relative;
-    overflow: hidden;
-  }
-
-  .content_wrap {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-    padding: 20px;
-    color: #fff;
-  }
-
-  .image_slick {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .slider_title {
-    font-size: 30px; 
-    font-weight: 400; 
-    color: #262626; 
-    margin: 0 0 15px 0; 
-    line-height: 1.2; 
-    letter-spacing: 2px;
-  }
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: #000;
+  outline: none;
+  background: transparent;
+}
 
 
-    .button {
-      color: #262626;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 14px 40px;
-      letter-spacing: 1px;
-      background-color: rgba(0,0,0,0);
-      border: 1px solid transparent;
-      border-color: #262626;
-      display: inline-block;
-    }
+.slick-arrow {
+  color: #111;
+  width: 60px;
+  height: 60px;
+  background: #ffffff80;
+  font-size: 16px;
+  color: #111;
+  text-align: center;
+  padding: 20px 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  z-index: 5;
+  transition: all 0.2s linear;
+}
 
+.slick-arrow:hover {
+  background-color: white;
+  color: #111;
+}
+.slick-prev{
+  left: 0;
+}
+  
+.slick-next {
+  right: 0;
+}
+.slick-prev:before, .slick-next:before {
+  display:none;
+}
 
-
-    .prev-btn-slick {
-      cursor: pointer;
-      position: absolute;
-      top: 20%;
-      left: 80%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      font-weight: bold;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      width: 60px;
-      height: 60px;
-      background: #ffffff80;
-      font-size: 16px;
-      color: #111;
-      text-align: center;
-    }
-    .next-btn-slick {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      font-weight: bold;
-      transition: 0.6s ease;
-      border-radius: 0 3px 3px 0;
-      user-select: none;
-      width: 60px;
-      height: 60px;
-      background: #ffffff80;
-      font-size: 16px;
-      color: #111;
-      text-align: center;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: #f1f1f1;
-      color: black;
-    }
-
-
-
-  .slick-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-  }
-
-  .slick-dots li {
-    margin: 0 5px;
-  }
 
 </style>
 
 
+  
+<script>
+  $(document).ready(function () {
+  $(".slider_wrap").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    infinite: true,
+    arrows: true,
+    draggable: true,
+    prevArrow: `<button type='button' class='slick-prev slick-arrow'><ion-icon name="arrow-back-outline"></ion-icon></button>`,
+    nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="arrow-forward-outline"></ion-icon></button>`,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          infinite: false,
+        },
+      },
+    ],
+  });
+});
+</script>
 
 {% if section.blocks.size > 0 %}
-  <div class="slider_wrap" data-slick='{"autoplay": {{ section.settings.carousel_autoplay }}, "autoplaySpeed": {{ section.settings.autoplay_speed }}, "dots": {{ section.settings.carousel_dots }}, "arrows": {{ section.settings.carousel_arrows }}}'>
-    {% for block in section.blocks %}
-      <div class="slider_item">
-          <div class="slider_img_wrap">
-            {{ block.settings.slide_img | image_url: width: 500, height: 450 | image_tag: class: 'image_slick' }}
-          </div>
-        <div class="content_wrap">
-        <div class="slider_content">
-          <h2 class="slider_title">{{  block.settings.slide_title }}</h2>
-          <a href="{{ block.settings.slide_link }}" class="button">{{ block.settings.button_title }}</a>
-          </div>
+<div class="slider_wrap" >
+  {% for block in section.blocks %}
+    <div class="slider_item">
+        <div class="slider_img_wrap">
+          {{ block.settings.slide_img | image_url: width: 3840 | image_tag:  class: 'image_slick' }}
+        </div>
+      <div class="content_wrap">
+      <div class="slider_content">
+        <h2 class="slider_title">{{  block.settings.slide_title }}</h2>
+        <a href="{{ block.settings.slide_link }}" class="button">{{ block.settings.button_title }}</a>
         </div>
       </div>
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+  <h1>{{ "Not slider yet . please create in the left bar !!!" }}</h1>
 {% endif %}
-
-
 
 {% schema %}
 {
-  "name": "Carousel",
+  "name": "Toro Slide Show & Slick",
   "max_blocks": 8,
   "settings": [
     {
@@ -171,12 +185,6 @@
       "type": "checkbox",
       "id": "carousel_dots",
       "label": "Enable dots",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "carousel_arrows",
-      "label": "Enable arrows",
       "default": false
     },
     {
@@ -233,7 +241,7 @@
     ],
     "presets": [
         {
-            "name": "Slick Carousel",
+            "name": "Toro Slide Show & Slick",
             "category": "Image",
             "blocks": [
                 {
@@ -248,12 +256,3 @@
   }
 {% endschema %}
 
-{% javascript %}
-$('.slider_wrap').slick({
-  infinite: true,
-  speed: 200,
-  slidesToShow: 1,
-  slidesToScroll: 1
-});
-
-{% endjavascript %}

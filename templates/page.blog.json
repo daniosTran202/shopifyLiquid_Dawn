@@ -109,39 +109,36 @@
         "padding_bottom": 52
       }
     },
-    "slick_carousel_yYkM3z": {
-      "type": "slick__carousel",
+    "slider_custom_iUECEW": {
+      "type": "slider-custom",
       "blocks": {
-        "slide_w9it8G": {
+        "slide_HJpe6R": {
           "type": "slide",
           "settings": {
-            "button_title": "Shop now",
-            "slide_link": "",
-            "slide_title": "Recycled Capsule  Puffer Anorak Parka",
-            "slide_text": "",
-            "slide_img": "shopify:\/\/shop_images\/h10-s-1.webp"
+            "image": "shopify:\/\/shop_images\/h10-s-2.webp",
+            "heading": "Image slide",
+            "button_label": "Button label",
+            "link": "",
+            "text_alignment": "center"
           }
         },
-        "slide_hWeKP9": {
+        "slide_eYLKwb": {
           "type": "slide",
           "settings": {
-            "button_title": "Shop now",
-            "slide_link": "shopify:\/\/collections\/automated-collection",
-            "slide_title": "Code With Faux  Fur Collars",
-            "slide_text": "",
-            "slide_img": "shopify:\/\/shop_images\/h10-s-2.webp"
+            "image": "shopify:\/\/shop_images\/h10-s-1.webp",
+            "heading": "Image slide",
+            "button_label": "Button label",
+            "link": "",
+            "text_alignment": "center"
           }
         }
       },
       "block_order": [
-        "slide_w9it8G",
-        "slide_hWeKP9"
+        "slide_HJpe6R",
+        "slide_eYLKwb"
       ],
       "settings": {
-        "carousel_autoplay": true,
-        "carousel_dots": true,
-        "carousel_arrows": true,
-        "autoplay_speed": "3000"
+        "title": "Slider title"
       }
     }
   },
@@ -153,6 +150,6 @@
     "custom_liquid_RPij6J",
     "rich_text_8YwC4p",
     "custom_liquid_hXqG4F",
-    "slick_carousel_yYkM3z"
+    "slider_custom_iUECEW"
   ]
 }

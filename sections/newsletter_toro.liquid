@@ -1,0 +1,155 @@
+
+<style>
+
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .text-center{
+    text-align: center;
+  }
+  
+  .toro_newsletter h2.newsletter_heading {
+    font-family: "Alegreya", Sans-serif;
+    font-size: 36px; 
+    letter-spacing: 0px;
+  }
+  
+  .toro_newsletter h2 {
+      font-size: 54px;
+      font-weight: 400;
+  }
+  .text-center h2 {
+      margin: 0 0 10px;
+  }
+  
+  .toro_newsletter p {
+    color: #777;
+    font-size: 14px;
+    margin: 0 0 15px;
+  }
+
+  .toro_newsletter .newsletter_submit_info {
+    padding: 50px 0 0;
+  }
+  
+  .toro_newsletter_custom{
+      margin: 0px 0px 50px; 
+    visibility: visible;
+  
+  }
+
+  .toro_newsletter_custom .newsletter_submit_form {
+    max-width: 660px;
+  }
+
+  .newsletter_submit_form {
+      max-width: 770px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+  }
+
+  input, button {
+    font-size: 13px;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    color: #262626;
+    line-height: 1.714286;
+  }
+
+  .input-group {
+    display: block;
+    position: relative;
+    border-collapse: separate;
+  }
+
+  input#email {
+    color: #777;
+    padding: 30px 140px 30px 25px;
+    background-color: #0000;
+    font-size: 14px;
+    font-weight: 300;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #00000042;
+    box-shadow: 0 0 #00000080;
+    width: 100%;
+    outline: none;
+  }
+
+  .globo-easy-mc-email {
+    padding: 10px 0 !important;
+    font-size: 18px !important;
+    border-width: 0 0 1px 0 !important;
+  }
+
+  button#subscribe {
+    font-size: 14px;
+    color: #777;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    position: absolute;
+    right: 30px;
+    top: 29px;
+  }
+
+  .btn_subscribe_form {
+    font-size: 18px !important;
+    right: 0 !important;
+    top: 10px !important;
+    cursor: pointer;
+  }
+
+  .btn_subscribe_form span:hover{
+    transition: all .35s ease;
+    color: #fc4f4f;
+  }
+
+  
+</style>
+
+
+<div class="liquid-section newsletter_toro_section">
+  <div class="toro_newsletter toro_newsletter_custom" >
+  <div class="container">
+    <div class="text-center">
+      <h2 class="newsletter_heading" >SIGN UP &amp; SAVE</h2>
+      <p>Sale up to 20% off for your next purchase in this month!</p>
+    </div>
+    <div class="newsletter_submit_info">
+      <form method="post" action="#" id="contact_form" accept-charset="UTF-8" class="newsletter_submit_form">
+        <div class="input-group">
+          <input type="email" name="email" id="email" class="globo-easy-mc-email field-no-label" value="" placeholder="Your email address…" required>
+          <span class="newsletter_submit_block">
+            <button type="submit" class="btn_subscribe_form" name="commit" id="subscribe">
+              <span>Subscribe</span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Newsletter Toro",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Newsletter Toro"
+        
+      }
+    ]
+  }
+{% endschema %}
+

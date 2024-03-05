@@ -21,6 +21,7 @@
       "block_order": [
         "heading_kmhAeX"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -32,6 +33,7 @@
     },
     "custom_liquid_7Ugc7i": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{{page.title}}",
         "color_scheme": "",
@@ -53,6 +55,7 @@
       "block_order": [
         "heading_p7kNw6"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -64,6 +67,7 @@
     },
     "custom_liquid_npyRRw": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{% if page.title == \"Liquid\" %}\n\nYes, I'm in ,this is file Liquid!\n\n{% else %}\n\nNot Liquid , check the name !\n\n{% endif %}",
         "color_scheme": "",
@@ -85,6 +89,7 @@
       "block_order": [
         "heading_ebYqyx"
       ],
+      "disabled": true,
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -96,6 +101,7 @@
     },
     "custom_liquid_W8jnDN": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "{{ \"hello world\" | capitalize }}",
         "color_scheme": "",
@@ -105,6 +111,7 @@
     },
     "liquid_ref_aiUFJt": {
       "type": "liquid-ref",
+      "disabled": true,
       "settings": {
         "liquid-ref": "New Customer",
         "liquid-checkbox": true,
@@ -116,6 +123,7 @@
     },
     "blog_posts_x3X4jc": {
       "type": "blog-posts",
+      "disabled": true,
       "settings": {
         "posts-range": 3,
         "new-blog": ""
