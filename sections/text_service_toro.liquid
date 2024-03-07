@@ -7,69 +7,53 @@
     padding-right: 15px;
   }
 
-  .row {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .col-md-4 {
     display: flex;
-    width: 50%;
-    margin: 0 10px;
+    margin: 15px 0;
   }
 
-  .g-text-support .img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .text_service .img {
     padding-right: 20px;
   }
   
-  .g-text-support.g-text-support-2 .text h5 {
+  .text_service.text_service-2 .text h5 {
     font-weight: 500;
     font-size: 20px;
     margin: 0 0
   }
 
-  .g-text-support.g-text-support-2 .text p {
+  .text_service.text_service-2 .text p {
     font-size: 12px;
     color:#777;
+  }
+
+  .text_service_toro{
+    display: inline-block;
   }
 
   
 </style>
 
-<div class="liquid-section globo_text_support_2">
-    <div class="g-text-support g-text-support-2 wow fadeIn" style="margin: 0px 0px 50px; background-color: rgb(255, 255, 255); visibility: visible; animation-name: fadeIn;">
+<div class="liquid-section globo_text_support_2 animated animatedFadeInUp  fadeInUp">
+    <div class="text_service text_service-2" style="margin: 0px 0px 50px; background-color: rgb(255, 255, 255); visibility: visible; ">
       <div class="container">
-        <div class="row demo_slick">
-          <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-            <div class="img">
-              <img class="lazy" alt="" src="//globo-toro.myshopify.com/cdn/shop/files/h2-icon-1_62x62.png" style="display: inline-block;">
-            </div>
-            <div class="text">
-              <h5>Freeship Worldwide</h5>
-              <p>Aliquam posuere arcu eget interdum</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-            <div class="img">
-              <img class="lazy" alt="" src="//globo-toro.myshopify.com/cdn/shop/files/h2-icon-2_62x62.png" style="display: inline-block;">
-            </div>
-            <div class="text">
-              <h5>Special Offer</h5>
-              <p>Aliquam posuere arcu eget interdum</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
-            <div class="img">
-              <img class="lazy" alt="" src="//globo-toro.myshopify.com/cdn/shop/files/h2-icon-3_62x62.png" style="display: inline-block;">
-            </div>
-            <div class="text">
-              <h5>Order Protection</h5>
-              <p>Aliquam posuere arcu eget interdum</p>
-            </div>
-          </div>
+        <div class="row ">
+
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+                <div class="col-md-4 col-sm-6 col-xs-12" style="visibility: visible;">
+                  <div class="img">
+
+                    {{ block.settings.image | image_url: width: auto | image_tag: class:"text_service_toro"}}
+                  </div>
+                  <div class="text">
+                    <h5>{{ block.settings.serviceTxt_title }}</h5>
+                    <p>{{ block.settings.serviceTxt_des }}</p>
+                  </div>
+                 </div>
+              {% endif %}
+            {% endfor %}
+          
         </div>
       </div>
   </div>
@@ -79,6 +63,39 @@
   {
     "name": "Text Service Toro",
     "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Text Service Item",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Banner Image"
+         },
+         {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+         },
+
+          {
+            "type": "header",
+            "content": "Header Text Settings"
+         },
+         {
+            "type": "text",
+            "id": "serviceTxt_title",
+            "label": "Service Text Title"
+         },
+
+        {
+            "type": "text",
+            "id": "serviceTxt_des",
+            "label": "Service Description"
+        }
+        ]
+      }
+    ],
     "presets":[
       {
         "name":"Text Service Toro"

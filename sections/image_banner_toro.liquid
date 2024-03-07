@@ -1,17 +1,7 @@
 
 
 <style> 
-  @media screen and (min-width: 1200px){
-    .container {
-        width: 1200px;
-    }
-  }
-  @media screen and (max-width: 1024px){
-    .container {
-        width: 970px;
-    }
-  }
-  
+
   .container {
       margin-right: auto;
       margin-left: auto;
@@ -44,6 +34,13 @@
     font-weight: 400;
     padding: 20px 30px;
   }
+
+  @media screen and (max-width: 767px){
+    .toro_only_banner h2 {
+        font-size: 46px !important;
+    }
+    
+  }
   .toro_only_banner  {
     margin: 0px 0px 50px; 
     visibility: visible; 
@@ -52,38 +49,93 @@
 
 </style>
 
-<div class="liquid-section toro_single_banner">
-  <div class="toro_only_banner">
-  <div class="container">
-    <div class="toro_banner single_banner_background" style="display: block; 
-  background-image: url(&quot;//globo-toro.myshopify.com/cdn/shop/files/home-10-banner-mobile-02_1920x.progressive.jpg&quot;);">
-      <div class="container text-center">
-        <h2>CABLE - KNIT<br> NEW ARRIVAL</h2>
+
+
+
+{% for block in section.blocks %}
+    {% if block.settings.image != blank %}
+      <div class="liquid-section toro_single_banner">
+          <div class="toro_only_banner">
+            <div class="container">
+              <div class="toro_banner single_banner_background" style="display: block;background-size: cover;
+                 background-position: {{block.settings.image_background_position}};background-image: url('{{ block.settings.image | img_url: "1800x", crop: "center" }}');">
+              <div class="container text-center">
+                <h2 style="color: {{block.settings.heading_color}};" class="text-center font-extrabold text-center ">{{ block.settings.hero_heading }}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
-
-</div>
+    {% endif %}
+{% endfor %}
 
 {% schema %}
-  {
-    "name": "Image Banner Toro",
-    "settings": [
-      {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Banner Images"
-      }
-    ],
-
-   
-    "presets": [
-      {
-        "name": "Image Banner Toro"
+{
+   "name": "Image Banner Toro",
+   "tag": "section",
+   "class": "home-hero-image",
+   "max_blocks": 1,
+   "blocks": [{
+      "type": "image",
+      "name": "Image",
+      "settings": [{
+            "type": "header",
+            "content": "Image Banner Toro"
+         },
+         {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+         },
+         
+         {
+            "type": "select",
+            "id": "image_background_position",
+            "label": "Image Background Position",
+            "options": [{
+                  "value": "top",
+                  "label": "Top"
+               },
+               {
+                  "value": "center",
+                  "label": "Center"
+               },
+               {
+                  "value": "bottom",
+                  "label": "Bottom"
+               }
+            ],
+            "default": "center"
+         },
         
-      }
-    ]
-  }
+         {
+            "type": "header",
+            "content": "Header Text Settings"
+         },
+         {
+            "type": "text",
+            "id": "hero_heading",
+            "label": "Heading Text"
+         },
+         {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Text Color",
+            "default": "#ffffff"
+         }
+      ]
+   }],
+   "presets": [{
+      "name": "Image Banner Toro",
+      "category": "Image",
+      "blocks": [{
+         "type": "image",
+         "settings": {
+            "hero_heading": "REPLACE THIS TEXT"
+         }
+      }]
+   }]
+}
 {% endschema %}
+
+

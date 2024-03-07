@@ -1,313 +1,196 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "slideshow_toro_HyiRNF": {
+      "type": "slideshow_toro",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "image_YtTMmk": {
+          "type": "image",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "image": "shopify:\/\/shop_images\/h10-s-1.png",
+            "image_background_position": "center",
+            "hero_heading": "RECYCLED CAPSULE PUFFER ANORAK PARKA",
+            "heading_color": "#000000",
+            "button_url": "",
+            "button_text": "SHOP NOW",
+            "button_background_color": "bg-white hover:bg-gray-200 text-black"
           }
         },
-        "text": {
-          "type": "text",
+        "image_XNTKTk": {
+          "type": "image",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "image": "shopify:\/\/shop_images\/h10-s-2.png",
+            "image_background_position": "center",
+            "hero_heading": "COAT WITH FAUX FUR COLLAR",
+            "heading_color": "#000000",
+            "button_url": "",
+            "button_text": "SHOP NOW",
+            "button_background_color": "bg-white hover:bg-gray-200 text-black"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "image_YtTMmk",
+        "image_XNTKTk"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/h10-s-2.webp",
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "title": ""
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "banner_slider_toro_hgJaYm": {
+      "type": "banner_slider_toro",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "image_drEpcx": {
+          "type": "image",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "image": "shopify:\/\/shop_images\/home10-banner-01.webp",
+            "image_background_position": "center",
+            "heading_title": "CONTRAST COAT"
           }
         },
-        "text": {
-          "type": "text",
+        "image_UFRfDD": {
+          "type": "image",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "image": "shopify:\/\/shop_images\/home10-banner-02.webp",
+            "image_background_position": "center",
+            "heading_title": "BIKER JACKET WITH PADDED SHOULDER"
+          }
+        },
+        "image_4mMYxt": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home10-banner-03.webp",
+            "image_background_position": "center",
+            "heading_title": "CONTRAST COAT"
+          }
+        },
+        "image_taLGr7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home10-banner-01.webp",
+            "image_background_position": "center",
+            "heading_title": "BIKER JACKET WITH PADDED SHOULDER"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "image_drEpcx",
+        "image_UFRfDD",
+        "image_4mMYxt",
+        "image_taLGr7"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "heading_font_size": "16px",
+        "heading_color": "#ffffff"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "products_gird_toro_KLkaKx": {
+      "type": "products_gird_toro",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "grid_products_toro": "all-products-toro"
       }
     },
-    "collage": {
-      "type": "collage",
+    "image_banner_toro_yFjJpm": {
+      "type": "image_banner_toro",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "image_jwHFbL": {
+          "type": "image",
           "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "image": "shopify:\/\/shop_images\/home-10-banner-mobile-02_1920x.progressive_f7966eeb-094b-42b3-9c4f-afb1fddc2e5d.webp",
+            "image_background_position": "center",
+            "hero_heading": "CABLE-KNIT <br> NEW ARRIVAL",
+            "heading_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "image_jwHFbL"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "card_styles": "product-card-wrapper",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
+    "products_slide_toro_EYC8UU": {
+      "type": "products_slide_toro",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "product_slider_toro": "product_slider_toro"
       }
     },
-    "multicolumn": {
-      "type": "multicolumn",
+    "image_banner_toro_qyH6iX": {
+      "type": "image_banner_toro",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "image_jt4jj4": {
+          "type": "image",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column3": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/home-10-banner-mobile_1920x.progressive_7ec69979-265c-418a-8a18-6e89bc71b6d9.webp",
+            "image_background_position": "center",
+            "hero_heading": "OVERSIZED HIGH NECK SWEATER <br>NEW ARRIVAL",
+            "heading_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "image_jt4jj4"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
-    "slideshow_jpyxtM": {
-      "type": "slideshow",
+    "latest_blog_toro_QtLDwW": {
+      "type": "latest_blog_toro",
+      "settings": {
+        "posts-range": 2,
+        "new-blog": "toro-blog"
+      }
+    },
+    "newsletter_toro_MYq73m": {
+      "type": "newsletter_toro",
+      "settings": {
+      }
+    },
+    "text_service_toro_7LFjye": {
+      "type": "text_service_toro",
       "blocks": {
-        "slide_LrUggk": {
-          "type": "slide",
+        "image_mpPcY6": {
+          "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/h10-s-2.webp",
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-right",
-            "show_text_box": false,
-            "text_alignment": "right",
-            "image_overlay_opacity": 10,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
+            "image": "shopify:\/\/shop_images\/h2-icon-1_62x62_00224a70-3c66-45e2-a503-b92cb310146b.webp",
+            "serviceTxt_title": "Freeship Worldwide",
+            "serviceTxt_des": "Aliquam posuere arcu eget interdum"
           }
         },
-        "slide_CdDnRU": {
-          "type": "slide",
+        "image_xEnjHP": {
+          "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/h10-s-1.webp",
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-right",
-            "show_text_box": false,
-            "text_alignment": "right",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
+            "image": "shopify:\/\/shop_images\/h2-icon-2_62x62_1.png",
+            "serviceTxt_title": "Special Offer",
+            "serviceTxt_des": "Aliquam posuere arcu eget interdum"
+          }
+        },
+        "image_fQXmkp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h2-icon-3_62x62_c0c8065c-6e30-4ff6-a128-7871144e6d31.png",
+            "serviceTxt_title": "Order Protection",
+            "serviceTxt_des": "Aliquam posuere arcu eget interdum"
           }
         }
       },
       "block_order": [
-        "slide_LrUggk",
-        "slide_CdDnRU"
+        "image_mpPcY6",
+        "image_xEnjHP",
+        "image_fQXmkp"
       ],
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "none",
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "slider_custom_AXnFRh": {
-      "type": "slider-custom",
-      "blocks": {
-        "slide_N33qxk": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/h10-s-2.webp",
-            "heading": "Image slide",
-            "button_label": "Button label",
-            "link": "",
-            "text_alignment": "center"
-          }
-        },
-        "slide_WqBTrt": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/h10-s-1.webp",
-            "heading": "Image slide",
-            "button_label": "Button label",
-            "link": "",
-            "text_alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_N33qxk",
-        "slide_WqBTrt"
-      ],
-      "settings": {
-        "title": "Slider title"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn",
-    "slideshow_jpyxtM",
-    "slider_custom_AXnFRh"
+    "slideshow_toro_HyiRNF",
+    "banner_slider_toro_hgJaYm",
+    "products_gird_toro_KLkaKx",
+    "image_banner_toro_yFjJpm",
+    "products_slide_toro_EYC8UU",
+    "image_banner_toro_qyH6iX",
+    "latest_blog_toro_QtLDwW",
+    "newsletter_toro_MYq73m",
+    "text_service_toro_7LFjye"
   ]
 }

@@ -3,8 +3,7 @@
     box-sizing: border-box;
 }
 
-
- .toro_post_bog{
+ .blog_post--toro{
   margin: 0px 0px 50px; 
    visibility: visible; 
    animation-name: fadeIn;
@@ -27,7 +26,8 @@
     text-align: center;
 }
 
-.blog_heading_style:before, .blog_heading_style:after {
+.blog_heading_style:before, 
+.blog_heading_style:after {
   content: "";
   width: 75px;
   height: 1px;
@@ -36,6 +36,13 @@
   background-color: #0000001a;
 }
 
+  @media screen and (max-width: 767px){
+    .blog_heading_style:before, 
+    .blog_heading_style:after{
+      display:none;
+    }
+  }
+  
 .blog_heading_style span {
   border-style: solid;
   border-width: 1px 1px 1px 1px;
@@ -44,29 +51,16 @@
   display: inline-block;
 }
 
-.row {
-  margin-left: -15px;
-  margin-right: -15px;
-}
 
 article {
     display: block;
-}
-@media screen and (min-width: 769px) {
-    .col-md-6{
-    width: 50%;
-    float: left;
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 }
 
 .blog_item{
   margin-bottom: 20px;
 }
-img {
+  
+.blog_item_image img {
   width: 100%;
   height: auto;
   vertical-align: middle;
@@ -119,6 +113,7 @@ img {
 
 
 .blog_item_btn {
+  font-family: 'Poppins';
   display: inline-block;
   text-decoration: none;
   font-size: 12px;
@@ -140,7 +135,8 @@ img {
   
 </style>
 
-<div class="liquid-section toro_blog_grid"><div class="toro_post_bog" >
+<div class="liquid-section toro_blog_grid animated animatedFadeInUp  fadeInUp">
+  <div class="blog_post--toro" >
   <div class="container">
     <div class="liquid-header text-center">
       <h3 class="blog_heading_style" style="font-size: 20px; letter-spacing: 2px;">
@@ -148,64 +144,76 @@ img {
       </h3>
     </div>
     <div class="row">
-        <article class="col-md-6 col-sm-6 col-xs-12">
-          <div class="blog_item">
-            <div class="blog_item_image">
-              <a href="">
-                <img class="lazy" src="//globo-toro.myshopify.com/cdn/shop/articles/img-14-570x280_570x_crop_center.progressive.jpg" alt="Mix &amp; Match - Fall Neutrals" style="display: inline-block;">
-              </a>
-            </div>
-            <div class="blog_item_infor">
-              <h3 class="blog_item_title"><a href="">Mix &amp; Match - Fall Neutrals</a></h3>
-              <div class="blog_author">
-                <span>by Globo.io, </span><span class="posted-on"><time datetime="2023-03-01T07:52:00Z">March 01, 2023</time></span>
+
+      {% assign blog = section.settings.new-blog %}
+      
+      {% unless blog.articles_count == 0 %}
+        {%  for article in blog.articles  limit: section.settings.posts-range %}
+            <article class="col-md-6 col-sm-6 col-xs-12">
+              <div class="blog_item">
+                <div class="blog_item_image">
+                  <a href="{{ article.url }}">
+                    {{ article.image | image_url: width: 570| image_tag: class: 'lazy', loading: 'lazy'  }}
+                  </a>
+                </div>
+                <div class="blog_item_infor">
+                  <h3 class="blog_item_title" ><a href="">{{ article.title }}</a></h3>
+                  <div class="blog_author">
+                    <span>by {{ article.author }}, </span>
+                    <span class="posted-on">
+                      <time datetime="2023-03-01T07:52:00Z">{{ article.created_at | date: "%m-%d-%Y" }}</time>
+                    </span>
+                  </div>
+                  <div class="blog_item_description">
+                    {{ article.content }}
+                  </div>
+                  <a href="" class="blog_item_btn">READ MORE</a>
+                </div>
               </div>
-              <div class="blog_item_description">
-                All the rumors have finally died down and many skeptics have tightened their lips, the iPod does support video format now on…
-              </div>
-              <a href="" class="blog_item_btn">Read more</a>
-            </div>
-          </div>
-        </article>
-      	
-        <article class="col-md-6 col-sm-6 col-xs-12">
-          <div class="blog_item">
-            
-            <div class="blog_item_image">
-              <a href="">
-                <img class="lazy" src="//globo-toro.myshopify.com/cdn/shop/articles/img-13-570x280_570x_crop_center.progressive.jpg" alt="The 5 Things I’m Loving Lately">
-              </a>
-            </div>
-            
-            <div class="blog_item_infor">
-              <h3 class="blog_item_title"><a href="">The 5 Things I’m Loving Lately</a></h3>
-              <div class="blog_author">
-                <span>by Globo.io, </span><span class="posted-on"><time datetime="2023-03-01T07:52:00Z">March 01, 2023</time></span>
-              </div>
-              <div class="blog_item_description">
-                
-                All the rumors have finally died down and many skeptics have tightened their lips, the iPod does support video format now on…
-                
-              </div>
-              <a href="" class="blog_item_btn">Read more</a>
-            </div>
-          </div>
-        </article>
+            </article>
+        {% endfor %}
+          
+        {% endunless %}
+
     </div>
   </div>
 </div>
 
 </div>
 
+
+
 {% schema %}
   {
     "name": "Latest Blog Toro",
-    "settings": [],
+    "settings": [
+
+      {
+                "id": "posts-range",
+                "type": "range",
+                "label": "Range",
+                "min": 2,
+                "max": 10,
+                "step": 1,
+                "default": 2
+            },
+            {
+                "id":"new-blog",
+                "type": "blog",
+                "label":"Blog"
+            }
+    ],
     "presets": [
       {
-        "name": "Latest Blog Toro"
+        "name": "Latest Blog Toro",
+        "category": "Posts"
         
       }
     ]
   }
+
+
+
+
+  
 {% endschema %}

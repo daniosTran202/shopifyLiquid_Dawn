@@ -1,46 +1,46 @@
 <style>
-
   *,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-@media screen and (min-width: 1200px){
-    .container {
-        width: 1200px;
-    }
-    .content_slideshow .container {
-        width: 100%;
-        max-width: 1200px;
-    }
-    
-  }
-  @media screen and (max-width: 992px){
-    .container {
-        width: 970px;
-    }
-    
-  }
-  @media screen and (max-width: 768px){
-    .container {
-        width: 750px;
-    }
-    
-  }
   .container {
-      margin-right: auto;
-      margin-left: auto;
-      padding-left: 15px;
-      padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .slide_show_toro .item {
-    position: relative;
-    overflow: hidden;
-}
+  .item.slideshow_item {
+    position:relative;
+    width: 100% !important;
+    overflow: hidden;      
+
+  }
+
+  @media screen and (min-width: 768px){
+    .item.slideshow_item {
+      min-height: 670px;
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .item.slideshow_item {
+      min-height: 100% !important;
+      height: 100% !important; 
+      padding-top: 100%; 
+    }
+    
+  }
+  @media screen and (max-width: 467px){
+    .align-right_content{
+      margin-left:8%;
+    }
+  }
+
 
   .content_slideshow {
     position: absolute;
@@ -51,19 +51,22 @@
     -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     width: 100%;
-}
+  }
 
   .align-right_content {
     float: right;
     margin-right: 8%;
-}
+  }
 
-.g-content-slider {
-    animation-delay: 1s;
-}
-.text-center {
-    text-align: center;
-}
+
+
+  .g-content-slider {
+      animation-delay: 1s;
+  }
+  
+    .g-content-slider h2 {
+      margin: -50px 0 50px !important;
+  }
 
   .btn_slideshow_toro{
     color: #262626; 
@@ -94,125 +97,212 @@
     line-height: 1.2; 
     letter-spacing: 2px;
   }
-
-.slick-prev:hover,
-.slick-prev:focus,
-.slick-next:hover,
-.slick-next:focus {
-  color: #000;
-  outline: none;
-  background: transparent;
-}
-
-
-.slick-arrow {
-  color: #111;
-  width: 60px;
-  height: 60px;
-  background: #ffffff80;
-  font-size: 16px;
-  color: #111;
-  text-align: center;
-  padding: 20px 0;
-  position: absolute;
-  top: 50%;
-  margin-top: -30px;
-  cursor: pointer;
-  transform: translateY(-50%);
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 1;
-  z-index: 5;
-  transition: all 0.2s linear;
-}
-
-.slick-arrow:hover {
-  background-color: white;
-  color: #111;
-}
-.slick-prev{
-  left: 0;
-}
   
-.slick-next {
-  right: 0;
-}
-.slick-prev:before, .slick-next:before {
-  display:none;
-}
+  .slick-prev:hover,
+  .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    color: #000;
+    outline: none;
+    background: transparent;
+  }
+  
+  
+  .slick-arrow {
+    color: #111;
+    width: 60px;
+    height: 60px;
+    background: #ffffff80;
+    font-size: 16px;
+    color: #111;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    z-index: 5;
+    transition: all 0.2s linear;
+  }
+  
+  .slick-arrow:hover {
+    background-color: white;
+    color: #111;
+  }
+  .slick-prev{
+    left: 0;
+  }
+    
+  .slick-next {
+    right: 0;
+  }
+  .slick-prev:before, .slick-next:before {
+    display:none;
+  }
 
 </style>
 
 
 <script>
-  $(document).ready(function () {
-  $(".slideshow_toro").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    arrows: true,
-    draggable: false,
-    prevArrow: `<button type='button' class='slick-prev slick-arrow'><ion-icon name="arrow-back-outline"></ion-icon></button>`,
-    nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="arrow-forward-outline"></ion-icon></button>`,
-    responsive: [
-      {
-        breakpoint: 1025,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
+  
+  function slideShowToro(){
+       $(document).ready(function () {
+        $(".slideshow_toro").not('.slick-initialized').slick({
           slidesToShow: 1,
-          arrows: false,
-          infinite: false,
-        },
-      },
-    ],
-  });
-});
-</script>
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: true,
+          draggable: false,
+          prevArrow: `<button type='button' class='slick-prev slick-arrow'><ion-icon name="arrow-back-outline"></ion-icon></button>`,
+          nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="arrow-forward-outline"></ion-icon></button>`,
+        });
+      });
+  }
+    slideShowToro();
+      $(document).on('shopify:section:load', () => slideShowToro());
 
+
+
+
+   {% if request.design_mode %}
+    $(document).on('shopify:section:load', () => slideShowToro());
+    
+    $(document).on('shopify:section:reorder', () => slideShowToro());
+    
+    $(document).on('shopify:section:select', () => slideShowToro());
+    
+    $(document).on('shopify:section:deselect', () => slideShowToro());
+    
+   {% endif %}
+
+
+  
+
+</script>
 
   <div class="slideshow_toro-homepage" style="margin: 0 0 30px 0;">
     <div class="container">
       <div class="slideshow_toro">
-        
-        <div class="item" style="background: url('//globo-toro.myshopify.com/cdn/shop/files/h10-s-1.jpg?v=1613744504') center center no-repeat;background-size: cover; min-height: 670px;position:relative">
-          <div class="content_slideshow">
-            <div class="container">
-              <div class="g-content-slider align-right_content text-center" style="max-width: 660px;">
-                 <h2 class="heading_content_font" >RECYCLED CAPSULE <br>PUFFER ANORAK PARKA<br><br></h2>
-                 <a href="" class="btn_slideshow_toro" >SHOP NOW</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="item" style="background: url('//globo-toro.myshopify.com/cdn/shop/files/h10-s-2.jpg?v=1613744504') center center no-repeat;background-size: cover; min-height: 670px;position:relative">
-          <div class="content_slideshow">
-            <div class="container">
-              <div class="g-content-slider align-right_content text-center" style="max-width: 660px;">
-              	<h2 class="heading_content_font" >COAT WITH FAUX FUR<br> COLLAR <br> <br></h2>
-                <a href="" class="btn_slideshow_toro" >SHOP NOW</a> 
-              </div>
-            </div>
-          </div>
-        </div>
-        
+          {% for block in section.blocks %}
+              {% if block.settings.image != blank %}
+                  <div class="item slideshow_item" 
+                    style="background: url('{{ block.settings.image | image_url: width:1800 }}') center center no-repeat;
+                    background-position: {{block.settings.image_background_position}};
+                    background-size: cover;">
+                    <div class="content_slideshow">
+                      <div class="container">
+                        <div class="g-content-slider align-right_content text-center" style="max-width: 350px;">
+                           <h2 class="heading_content_font" style="color: {{block.settings.heading_color}};" >{{block.settings.hero_heading}}</h2>
+                           <a href="{{ block.settings.button_url }}" class="btn_slideshow_toro" style="background: {{block.settings.button_background_color}};" >{{ block.settings.button_text }}</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              {% endif %}
+          {% endfor %}
+      </div>
     </div>
   </div>
-</div>
 
 {% schema %}
   {
     "name": "SlideShow Toro",
     "settings": [
-      
-    ],
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Slideshow Toro"
+    }
+  ],
+  "blocks": [{
+      "type": "image",
+      "name": "Image",
+      "settings": [{
+            "type": "header",
+            "content": "Hero Image"
+         },
+         {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+         },
+         {
+            "type": "select",
+            "id": "image_background_position",
+            "label": "Image Background Position",
+            "options": [{
+                  "value": "top",
+                  "label": "Top"
+               },
+               {
+                  "value": "center",
+                  "label": "Center"
+               },
+               {
+                  "value": "bottom",
+                  "label": "Bottom"
+               }
+            ],
+            "default": "center"
+         },
+         {
+            "type": "header",
+            "content": "Header Text Settings"
+         },
+         {
+            "type": "text",
+            "id": "hero_heading",
+            "label": "Heading Text"
+         },
+         {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Text Color",
+            "default": "#ffffff"
+         },
+         {
+            "type": "header",
+            "content": "Sub-header Text Settings"
+         },
+         {
+            "type": "header",
+            "content": "Button Settings"
+         },
+         {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+         },
+         {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Learn more"
+         },
+         {
+            "type": "radio",
+            "id": "button_background_color",
+            "label": "Button Background Color",
+            "options": [{
+                  "value": "bg-white hover:bg-gray-200 text-black",
+                  "label": "White"
+               },
+               {
+                  "value": "bg-black hover:bg-gray-800 text-white",
+                  "label": "Black"
+               }
+            ],
+            "default": "bg-white hover:bg-gray-200 text-black"
+         }
+      ]
+   }],
+    
     "presets": [
       {
         "name": "SlideShow Toro"

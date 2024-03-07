@@ -21,37 +21,142 @@
     },
     "slideshow_toro_yDrC8K": {
       "type": "slideshow_toro",
+      "blocks": {
+        "image_Feyjyf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h10-s-1.webp",
+            "image_background_position": "center",
+            "hero_heading": "COAT WITH FAUX FUR COLLARS",
+            "heading_color": "#000000",
+            "button_url": "",
+            "button_text": "SHOP NOW",
+            "button_background_color": "bg-white hover:bg-gray-200 text-black"
+          }
+        },
+        "image_88aGz8": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h10-s-2.webp",
+            "image_background_position": "center",
+            "hero_heading": "RECYCLED CAPSULE PUFFER ANORAK PARKA",
+            "heading_color": "#000000",
+            "button_url": "",
+            "button_text": "SHOP NOW",
+            "button_background_color": "bg-white hover:bg-gray-200 text-black"
+          }
+        }
+      },
+      "block_order": [
+        "image_Feyjyf",
+        "image_88aGz8"
+      ],
       "settings": {
+        "title": ""
       }
     },
-    "banner_preview_toro_GRpHyJ": {
-      "type": "banner_preview_toro",
+    "banner_slider_toro_AaBrzn": {
+      "type": "banner_slider_toro",
+      "blocks": {
+        "image_gC4yCf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home10-banner-01.webp",
+            "image_background_position": "center",
+            "heading_title": "CONTRAST COAT"
+          }
+        },
+        "image_aLQfLE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home10-banner-03.webp",
+            "image_background_position": "center",
+            "heading_title": "BIKER JACKET WITH PADDED SHOULDER"
+          }
+        },
+        "image_K8BR8W": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/organized-workspace.jpg",
+            "image_background_position": "center",
+            "heading_title": "CONTRAST COAT"
+          }
+        },
+        "image_9hiTMk": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home10-banner-01.webp",
+            "image_background_position": "center",
+            "heading_title": "BIKER JACKET WITH PADDED SHOULDER"
+          }
+        }
+      },
+      "block_order": [
+        "image_gC4yCf",
+        "image_aLQfLE",
+        "image_K8BR8W",
+        "image_9hiTMk"
+      ],
       "settings": {
+        "heading_font_size": "16px",
+        "heading_color": "#ffffff"
       }
     },
     "products_gird_toro_w7PBw4": {
       "type": "products_gird_toro",
       "settings": {
+        "grid_products_toro": ""
+      }
+    },
+    "image_banner_toro_9RJHXR": {
+      "type": "image_banner_toro",
+      "blocks": {
+        "image_9HP6PY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-10-banner-mobile-02_1920x.progressive_f7966eeb-094b-42b3-9c4f-afb1fddc2e5d.webp",
+            "image_background_position": "center",
+            "hero_heading": "CABLE - KNIT <br> NEW ARRIVALS",
+            "heading_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_9HP6PY"
+      ],
+      "settings": {
+      }
+    },
+    "products_slide_toro_LE6NYx": {
+      "type": "products_slide_toro",
+      "settings": {
+        "product_slider_toro": ""
       }
     },
     "image_banner_toro_XWtzTr": {
       "type": "image_banner_toro",
-      "settings": {
-      }
-    },
-    "topsale_toro_NKV6EU": {
-      "type": "topsale_toro",
-      "settings": {
-      }
-    },
-    "image_banner_toro_9DegHw": {
-      "type": "image_banner_toro",
+      "blocks": {
+        "image_E7jrtL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/home-10-banner-mobile_1920x.progressive_7ec69979-265c-418a-8a18-6e89bc71b6d9.webp",
+            "image_background_position": "center",
+            "hero_heading": "OVERSIZED HIGH NECK SWEATER <br> NEW ARRIVAL",
+            "heading_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_E7jrtL"
+      ],
       "settings": {
       }
     },
     "latest_blog_toro_TKxYEx": {
       "type": "latest_blog_toro",
       "settings": {
+        "posts-range": 2,
+        "new-blog": ""
       }
     },
     "newsletter_toro_fYxeEK": {
@@ -61,7 +166,45 @@
     },
     "text_service_toro_JbcXrF": {
       "type": "text_service_toro",
+      "blocks": {
+        "image_RWwacY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h2-icon-1_62x62_00224a70-3c66-45e2-a503-b92cb310146b.webp",
+            "serviceTxt_title": "Freeship Worldwide",
+            "serviceTxt_des": "Aliquam posuere arcu eget interdum"
+          }
+        },
+        "image_dDfXEq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h2-icon-2_62x62_1.png",
+            "serviceTxt_title": "Special Offer",
+            "serviceTxt_des": "Aliquam posuere arcu eget interdum"
+          }
+        },
+        "image_Rz7QYy": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/h2-icon-3_62x62_c0c8065c-6e30-4ff6-a128-7871144e6d31.png",
+            "serviceTxt_title": "Order Protection",
+            "serviceTxt_des": "Aliquam posuere arcu eget interdum"
+          }
+        }
+      },
+      "block_order": [
+        "image_RWwacY",
+        "image_dDfXEq",
+        "image_Rz7QYy"
+      ],
       "settings": {
+      }
+    },
+    "latest_blog_toro_zMbiyc": {
+      "type": "latest_blog_toro",
+      "settings": {
+        "posts-range": 2,
+        "new-blog": "toro-blog"
       }
     }
   },
@@ -69,13 +212,14 @@
     "main",
     "form",
     "slideshow_toro_yDrC8K",
-    "banner_preview_toro_GRpHyJ",
+    "banner_slider_toro_AaBrzn",
     "products_gird_toro_w7PBw4",
+    "image_banner_toro_9RJHXR",
+    "products_slide_toro_LE6NYx",
     "image_banner_toro_XWtzTr",
-    "topsale_toro_NKV6EU",
-    "image_banner_toro_9DegHw",
     "latest_blog_toro_TKxYEx",
     "newsletter_toro_fYxeEK",
-    "text_service_toro_JbcXrF"
+    "text_service_toro_JbcXrF",
+    "latest_blog_toro_zMbiyc"
   ]
 }
