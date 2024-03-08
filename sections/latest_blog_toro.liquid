@@ -1,4 +1,7 @@
-<style>
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--blog_posts.css' | asset_url | stylesheet_tag }}
+
+{% comment %} <style>
 * {
     box-sizing: border-box;
 }
@@ -133,7 +136,7 @@ article {
 }
 
   
-</style>
+</style> {% endcomment %}
 
 <div class="liquid-section toro_blog_grid animated animatedFadeInUp  fadeInUp">
   <div class="blog_post--toro" >
@@ -189,19 +192,23 @@ article {
     "settings": [
 
       {
-                "id": "posts-range",
-                "type": "range",
-                "label": "Range",
-                "min": 2,
-                "max": 10,
-                "step": 1,
-                "default": 2
-            },
-            {
-                "id":"new-blog",
-                "type": "blog",
-                "label":"Blog"
-            }
+        "id": "posts-range",
+        "type": "range",
+        "label": "Range",
+        "min": 2,
+        "max": 10,
+        "step": 1,
+        "default": 2
+      },
+      {
+          "type": "header",
+          "name": "Choose Blog"
+      },
+      {
+        "id":"new-blog",
+        "type": "blog",
+        "label":"Blog"
+      }
     ],
     "presets": [
       {

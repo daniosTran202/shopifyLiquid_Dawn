@@ -1,19 +1,12 @@
-<style>
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+{% comment %} <style>
 
-  .container {
+
+ .container {
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
-  }
-
+  } 
   .item.slideshow_item {
     position:relative;
     width: 100% !important;
@@ -64,7 +57,7 @@
       animation-delay: 1s;
   }
   
-    .g-content-slider h2 {
+  .g-content-slider h2 {
       margin: -50px 0 50px !important;
   }
 
@@ -96,8 +89,7 @@
     margin: 0 0 15px 0; 
     line-height: 1.2; 
     letter-spacing: 2px;
-  }
-  
+  }   
   .slick-prev:hover,
   .slick-prev:focus,
   .slick-next:hover,
@@ -144,11 +136,14 @@
   }
   .slick-prev:before, .slick-next:before {
     display:none;
-  }
+  } 
 
-</style>
+</style> {% endcomment %}
 
 
+
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--slideshow.css' | asset_url | stylesheet_tag }}
 <script>
   
   function slideShowToro(){

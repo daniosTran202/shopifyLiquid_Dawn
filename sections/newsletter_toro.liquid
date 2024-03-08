@@ -1,4 +1,4 @@
-
+{% comment %} 
 <style>
 
   .container{
@@ -113,8 +113,11 @@
   }
 
   
-</style>
+</style> {% endcomment %}
 
+
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--newsletter.css' | asset_url | stylesheet_tag }}
 
 <div class="liquid-section newsletter_toro_section animated animatedFadeInUp  fadeInUp">
   <div class="toro_newsletter toro_newsletter_custom" >

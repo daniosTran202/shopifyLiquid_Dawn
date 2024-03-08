@@ -1,11 +1,11 @@
-<style>
+{% comment %} <style>
 
   .container {
       margin-right: auto;
       margin-left: auto;
       padding-left: 15px;
       padding-right: 15px;
-  }
+  } 
 
   .tab-content>.active {
       height: auto;
@@ -92,7 +92,10 @@
   }
 
   
-</style>
+</style> {% endcomment %}
+
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--grid_products.css' | asset_url | stylesheet_tag }}
 
 
 <div class="products_grid--toro animated animatedFadeInUp fadeInUp" style="margin: 0px 0px 50px;">
@@ -112,7 +115,7 @@
                   <div class="product_item--inner">
                       <div class="product_item--thumbnail">
                           <div class="product_item--thumbnail-holder">
-                              <a href="/collections/men/products/sleeve-button-cowl-neck" class="product__link" tabindex="0">
+                              <a href="" class="product__link" tabindex="0">
                                 {{ product.media[1]| image_url: width:400 |image_tag: class:"wp-post-image loading lazy", style:"display:block"}}
                                 {{ product.media[2]| image_url: width:400 |image_tag: class:"wp-alt-image loading lazy", style:"display:block"}}
                                

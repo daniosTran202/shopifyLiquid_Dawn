@@ -1,4 +1,4 @@
-<style>
+{% comment %} <style>
 
   .container {
     margin-right: auto;
@@ -32,7 +32,10 @@
   }
 
   
-</style>
+</style> {% endcomment %}
+
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--text_service.css' | asset_url | stylesheet_tag }}
 
 <div class="liquid-section globo_text_support_2 animated animatedFadeInUp  fadeInUp">
     <div class="text_service text_service-2" style="margin: 0px 0px 50px; background-color: rgb(255, 255, 255); visibility: visible; ">

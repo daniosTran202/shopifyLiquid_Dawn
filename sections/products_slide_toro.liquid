@@ -1,5 +1,4 @@
-<style>
-
+{% comment %} <style>
   .container {
       margin-right: auto;
       margin-left: auto;
@@ -335,8 +334,11 @@
   }
 
   
-</style>
+</style> {% endcomment %}
 
+
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--products_slider.css' | asset_url | stylesheet_tag }}
 <script>
   
   function sliderProducts (){
@@ -405,7 +407,7 @@
            {% assign _collection = collections['product_slider_toro'] %}
             {% for product in collections[section.settings.product_slider_toro].products %}              
 
-                <div class="grid-item  " aria-hidden="false" style=" visibility: visible; animation-name: ;" tabindex="0" role="tabpanel" id="00" aria-describedby="-control00">
+                <div class="grid-item" >
                   <div class="product_item--inner">
                       <div class="product_item--thumbnail">
                           <div class="product_item--thumbnail-holder">
