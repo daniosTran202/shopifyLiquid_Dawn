@@ -51,6 +51,9 @@
  {% endcomment %}
 
 
+{{ 'toro-index.css' | asset_url | stylesheet_tag }}
+{{ 'toro--image_banner.css' | asset_url | stylesheet_tag }}
+
 
 {% for block in section.blocks %}
     {% if block.settings.image != blank %}
