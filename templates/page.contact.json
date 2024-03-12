@@ -105,7 +105,9 @@
     "products_gird_toro_w7PBw4": {
       "type": "products_gird_toro",
       "settings": {
-        "grid_products_toro": ""
+        "grid_products_toro": "all-products-toro",
+        "original_price": false,
+        "label_tags": false
       }
     },
     "image_banner_toro_9RJHXR": {

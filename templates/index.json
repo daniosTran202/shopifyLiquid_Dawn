@@ -86,7 +86,10 @@
     "products_gird_toro_KLkaKx": {
       "type": "products_gird_toro",
       "settings": {
-        "grid_products_toro": "all-products-toro"
+        "grid_products_toro": "all-products-toro",
+        "original_price": false,
+        "label_tags": false,
+        "btn_action": false
       }
     },
     "image_banner_toro_yFjJpm": {
@@ -111,7 +114,10 @@
     "products_slide_toro_EYC8UU": {
       "type": "products_slide_toro",
       "settings": {
-        "product_slider_toro": "product_slider_toro"
+        "product_slider_toro": "product_slider_toro",
+        "original_price": false,
+        "label_tags": false,
+        "btn_action": false
       }
     },
     "image_banner_toro_qyH6iX": {

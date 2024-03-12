@@ -498,8 +498,6 @@ h6:empty {
   display: inline-block;
   border: none;
   box-shadow: none;
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
   font-size: 1.4rem;
@@ -2333,6 +2331,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
 /* section-header */
 .section-header.shopify-section-group-header-group {
   z-index: 3;
+  margin: 0;
 }
 
 .shopify-section-header-sticky {
@@ -2806,22 +2805,34 @@ details[open] > .header__submenu {
   color: rgba(var(--color-foreground), 0.75);
 }
 
-.header__menu-item:hover {
-  color: rgb(var(--color-foreground));
+.header__menu-item span:hover, .list-menu__item:hover {
+  color: #fc4f4f;
+  text-decoration: none !important;
+}
+.header__menu-item span {
+    font-family: 'Poppins';
+    font-size: 14px;
+    position: relative;
+    color: #262626;
+    display: block;
+    line-height: 30px;
+    padding: 0px 10px;
+    transition: background .3s ease-in-out, color .3s ease-in-out, border-color .3s ease-in-out;
+}
+.header__menu-item span:after {
+  display:block;
+  content: "";
+  width: calc(100% - 30px);
+  transition: width .3s ease-in;
 }
 
-.header__menu-item span {
+
+.header__active-menu-item {
+  transition: text-decoration-thickness var(--duration-short) ease;
+  color: #fc4f4f;
   transition: text-decoration var(--duration-short) ease;
 }
 
-.header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
-
-details[open] > .header__menu-item {
-  text-decoration: underline;
-}
 
 details[open]:hover > .header__menu-item {
   text-decoration-thickness: 0.2rem;
@@ -2831,15 +2842,13 @@ details[open] > .header__menu-item .icon-caret {
   transform: rotate(180deg);
 }
 
-.header__active-menu-item {
-  transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
-}
 
-.header__menu-item:hover .header__active-menu-item {
-  text-decoration-thickness: 0.2rem;
+.header__menu-item:hover header__menu-item span:after {
+    display: block;
+    left: 15px;
+    right: auto;
+    width: calc(100% - 30px);
+    transition: width 300ms ease-in;
 }
 
 .header__submenu {
@@ -2881,7 +2890,7 @@ details[open] > .header__menu-item .icon-caret {
 }
 
 .header__menu-item .icon-caret {
-  right: 0.8rem;
+  right: 2rem;
 }
 
 .header__submenu .icon-caret {
@@ -3185,7 +3194,6 @@ details-disclosure > details {
 
 .rte a {
   color: rgba(var(--color-link), var(--alpha-link));
-  text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.1rem;
   transition: text-decoration-thickness var(--duration-short) ease;
 }
@@ -3505,3 +3513,9 @@ details-disclosure > details {
     --border-offset: 0px; /* Prevent the border from growing on buttons when this effect is on. */
   }
 }
+
+
+
+
+
+

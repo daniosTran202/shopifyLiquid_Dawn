@@ -1,405 +1,92 @@
-{% comment %} <style>
-  .container {
-      margin-right: auto;
-      margin-left: auto;
-      padding-left: 15px;
-      padding-right: 15px;
-  }
-
-  .section-header {
-    text-align: center;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-
-
-  .heading_style:before,
-  .heading_style:after {
-    content: '';
-    width: 75px;
-    height: 1px;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: rgba(0,0,0,0.1);
-  }
-
-  @media screen and (max-width: 767px){
-    .heading_style:before, 
-    .heading_style:after{
-      display:none;
-    }
-  }
-
-  .heading_style span {
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #0000001a;
-    padding: 15px 50px;
-    display: inline-block;
-  }
-
-
-  .section-header h3 {
-    color: #262626;
-    margin: 0 0 12px;
-    font-size: 36px;
-    font-weight: 400;
-    position: relative;
-  }
-
-  .grid-items{
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-  
-  img {
-    width; 100%;
-    vertical-align: middle;
-  }
-
-  .grid-items .grid-item {
-    padding-left: 15px;
-    padding-right: 15px;
-    float: left;
-    clear: none !important;
-  }
-
-  
-  .product_item--title {
-  	font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 0 0 10px 0;
-  }
-  
-  .product_item--title a {
-    color: #262626;
-    text-decoration: none;
-  }
-  .product_item--title a:hover {
-    color: #fc4f4f;
-    transition: all 250ms ease-out;
-
-  }
-
-  .wrap-addto {
-    display: flex;
-    justify-content:center;
-    align-items: center
-  }
-  
-  .wrap-addto a:after {
-  	content: attr(title);
-    position: absolute;
-    font-size: 9px;
-    white-space: pre;
-    line-height: 1;
-    bottom: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    padding: 9px 12px 14px 12px;
-    background-image: url("//cdn.shopify.com/s/files/1/0157/7235/2566/t/12/assets/arrow-tootitp.png?36602");
-    background-position: center 105%;
-    background-repeat: no-repeat;
-    opacity: 0;
-    color: #fff;
-    border-radius: 2px;
-    text-decoration:none;
-  }
-
-  .wrap-addto a {
-    text-decoration: none;
-    color: #262626;
-  }
-  
-  .wrap-addto a:hover:after {
-  	opacity: 1;
-  }
-  
-  .product_item_thumbnail_action {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    height: 50px;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    text-align: center;
-    z-index: 9;
-  }
-  
-  .product_item_thumbnail_action a {
-    opacity: 0;
-    transform: translate(92px, 0);
-    -webkit-transform: translate(92px, 0);
-    transition-delay: 50ms;
-  }
-  
-  .product_item--inner:hover .product_item_thumbnail_action a {
-    opacity: 1;
-    transform: translate(0, 0);
-    -webkit-transform: translate(0, 0);
-  }
-  
-  .wrap-addto .globo-add-to-cart {
-    transition-delay: 100ms;	
-  }
-  
-  .wrap-addto .la-core-wishlist {
-    cursor:pointer;
-    transition-delay: 150ms;	
-  }
-  
-  .wrap-addto .globo-add-to-compare {
-    cursor:pointer;
-    transition-delay: 200ms;	
-  }
-  
-  .wrap-addto .globo-add-to-cart-toro {
-    transition-delay: 200ms;	
-  }
-  
-
-  .wrap-addto .la-quickview-button:before ,
-  .wrap-addto .globo-add-to-cart-toro:before,
-  .wrap-addto .la-core-wishlist:before,
-  .wrap-addto .globo-add-to-compare:before,
-  .wrap-addto a:before {
-    font-family: FontAwesome;
-    direction: ltr;
-    font-size: 18px;
-    height: inherit;
-    line-height: inherit;
-    text-align: center;
-    width: inherit;
-    text-transform: none;
-    speak: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    }
-  
-  .wrap-addto .la-quickview-button:before {
-    content: "\f06e";
-    display: block;
-
-  }
-     
-  .wrap-addto .globo-add-to-cart-toro:before {
-    content: "\f07a";
-    display: block;
-  }
-  
-  .wrap-addto .la-core-wishlist:before {
-    content: "\f004";
-    display: block;
-
-  
-  }
-  .wrap-addto .globo-add-to-compare:before {
-     content: "\e4bf";
-     display: block;
-  }
-  
-  .wrap-addto a:hover {
-  	color: #fff !important;
-    background-color: #fc4f4f;
-  }
-  
-  .tooltip {
-  	font-family: Poppins, sans-serif;
-  }
-  
-  .tooltip > .tooltip-inner {
-  	padding: 5px;
-    	background-color: #262626;
-  }
-  
-  .tooltip.top .tooltip-arrow {
-  	border-top-color: #262626;
-  }
-  
-  .product_item--thumbnail {
-  overflow: hidden;
-  }
-
-   .product_item--thumbnail img {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-    display: inline-block;
-  }
-  
-  .product_item--thumbnail {
-      position: relative;
-      z-index: 2;
-  }
-  .product_item--thumbnail img {
-      transition: opacity 0.5s ease, transform 2s cubic-bezier(0, 0, 0.44, 1.18);
-  }
-  
-  .product_item--thumbnail .wp-alt-image {
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 2;
-      transition: opacity 0.5s ease, transform 2s cubic-bezier(0, 0, 0.44, 1.18);
-      opacity: 0;
-  }
-  
-  .product_item--thumbnail:hover .wp-alt-image {
-      opacity: 1;
-  }
-
-
-  .product_item_thumbnail_action {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    height: 50px;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    text-align: center;
-    z-index: 9;
-  }
-
-  .product_item_thumbnail_action a {
-    opacity: 0;
-    transform: translate(92px);
-    -webkit-transform: translate(92px, 0);
-    transition-delay: 50ms;
-  }
-  .wrap-addto a {
-    position: relative;
-    width: 46px;
-    height: 46px;
-    line-height: 46px;
-    font-size: 0;
-    display: inline-block;
-    margin: 5px;
-    padding: 0;
-    vertical-align: middle;
-    background-color: #fff;
-    border-radius: 50%;
-    transition: all .25s ease-out;
-  }
-
-  .gpc-action {
-    cursor: pointer;
-    display: inline-block;
-  }
-
-    
-  .wrap-addto .globo-add-to-compare, .wrap-addto .globo-add-to-cart-toro {
-    transition-delay: .2s;
-  }
-
-  .product_item--info{
-    position: relative;
-    padding: 20px 0;
-  }
-
-  .label-product {
-    position: absolute;
-    z-index: 3;
-    font-size: 12px;
-    padding: 10px;
-    line-height: 20px;
-    min-width: 85px;
-    text-align: center;
-    background-color: #a3bc60;
-    color: #fff;
-    top: 0;
-    right: 0;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .text-center h2 {
-    margin: 0 0 10px;
-  }
-
-  .price {
-    line-height: 20px;
-    display: inline-block;
-    font-size: 16px;
-    color: #262626;
-    font-family: Poppins, sans-serif;
-  }
-
-  
-</style> {% endcomment %}
-
-
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--products_slider.css' | asset_url | stylesheet_tag }}
+
 <script>
-  
-  function sliderProducts (){
-        $(document).ready(function () {
-        $(".slick_slider--products").not('.slick-initialized').slick({
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        infinite: true,
-        autoplay: false,
-        arrows: false,
-        dots: true,
-        draggable: true,
-        responsive: [
-          {
-            breakpoint: 1025,
-            settings: {
-              dots:true,
-              slidesToShow: 3,
-              slidesToScroll: 3
-            },
+
+   $(document).ready(function () {
+      $(".slick_slider--products").slick({
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      infinite: true,
+      autoplay: false,
+      arrows: false,
+      dots: true,
+      draggable: true,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            dots:true,
+            slidesToShow: 3,
+            slidesToScroll: 3
           },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              arrows: false,
-              infinite: false,
-              dots:false,
-            },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            infinite: false,
+            dots:false,
           },
-        ],
-      });
+        },
+      ],
     });
-  }
+  });
 
   
-  sliderProducts();
-       $(document).on('shopify:section:load', () => sliderProducts());
-
-
-
-  {% if request.design_mode %}
-     $(document).on('shopify:section:load', () => sliderProducts());
-        
-      $(document).on('shopify:section:reorder', () => sliderProducts());
-      
-      $(document).on('shopify:section:select', () => sliderProducts());
-      
-      $(document).on('shopify:section:deselect', () => sliderProducts());
-  {% endif %}
-
 </script>
 
+{%- if request.design_mode -%}
+
+  <script>
+    
+         $(document).on('shopify:section:load', () => {
+           $(document).ready(function () {
+              $(".slick_slider--products").slick({
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              infinite: true,
+              autoplay: false,
+              arrows: false,
+              dots: true,
+              draggable: true,
+              responsive: [
+                {
+                  breakpoint: 1025,
+                  settings: {
+                    dots:true,
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                  },
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    infinite: false,
+                    dots:false,
+                  },
+                },
+              ],
+            });
+          });
+         });
+  
+  </script>
+    
+{%- endif -%}
 
 
 
-<div class="product_slider--toro animated animatedFadeInUp  fadeInUp" style="margin: 0px 0px 100px; visibility: visible ;">
+
+<div class="product_slider--toro animated animatedFadeInUp fadeInUp" style="margin: 0px 0px 100px;">
   <div class="container">
-    <div class="section-header text-center">
-      <h3 class="heading_style" style="font-size: 20px; letter-spacing: 2px;"><span>TOP SALE</span>
+    <div class="section_header--toro text-center">
+      <h3 class="heading_style" ><span>TOP SALE</span>
       </h3>
     </div>
     <div class="slick_slider--products grid-items xlg-grid-4-items lg-grid-4-items md-grid-4-items sm-grid-3-items xs-grid-2-items mb-grid-1-items " >
@@ -414,18 +101,21 @@
                               <a href="" class="product__link" tabindex="0">
                                 {{ product.media[1]| image_url: width:400 |image_tag: class:"wp-post-image loading lazy", style:"display:block"}}
                                 {{ product.media[2]| image_url: width:400 |image_tag: class:"wp-alt-image loading lazy", style:"display:block"}}
-                           
-                                {% if product.tags == "New" %}
-                                  <span class="label-product new">New</span>
-                                {% elsif product.tags contains "Hot" %}
-                                  <span class="label-product hot">Hot</span>
-                                {% else %}
-                                  <span style="display: none;"></span>
-                                {% endif %}
+
+                                <div style="{%- if section.settings.label_tags -%}display: none;{%- endif -%}">
+                                  {% if product.tags == "New" %}
+                                    <span class="label-product new">New</span>
+                                  {% elsif product.tags contains "Hot" %}
+                                    <span class="label-product hot">Hot</span>
+                                  {% else %}
+                                    <span style="display: none;"></span>
+                                  {% endif %}
+                                </div>
+                                
                               </a>
                           </div>
                       <div class="product_item_thumbnail_action product_item--action">
-                          <div class="wrap-addto">
+                          <div class="wrap-addto" style="{%- if section.settings.btn_action -%}display: none;{%- endif -%}">
                           <a href=""  class="globo-quick-view-button quickview  la-quickview-button" title="Quick view" tabindex="0"><span>Quick view</span></a>                    
                               <div class="gpw-action"><a class="add_wishlist  la-core-wishlist globo-add-to-wishlist"  title="Add to wishtlist" ><span>Add to wishtlist</span></a></div>                            
                               <div class="gpc-action"><a class="globo-add-to-compare"  title="Add to compare" ><span>Add to compare</span></a></div>
@@ -442,7 +132,7 @@
                           <h2 class="product_item--title">
                           <a href="" tabindex="0">{{ product.title }}</a>
                           </h2>
-                          <span class="price">{{ product.price | money }}</span>
+                          <span class="price" style="{%- if section.settings.original_price -%}display: none;{%- endif -%}">{{ product.price | money }}</span>
                       </div>
                       </div>
                   </div>  
@@ -461,6 +151,28 @@
             "type": "collection",
             "id": "product_slider_toro",
             "label": "Chose Collection to show on slideshow"
+        },
+         {
+          "type": "header",
+          "content": "Product Item Option"
+        },
+        {
+          "type": "checkbox",
+          "id": "original_price",
+          "default": false,
+          "label": "Show/Hide Original Price"
+        },
+       {
+          "type": "checkbox",
+          "id": "label_tags",
+          "label": "Show/Hide Label Tag",
+          "default": false
+        },
+       {
+          "type": "checkbox",
+          "id": "btn_action",
+          "label": "Show/Hide Product Action",
+          "default": false
         }
     ],
     "presets": [

@@ -1,0 +1,19 @@
+.product_slider--toro .heading_style:before,
+.product_slider--toro .heading_style:after {
+  content: "";
+  width: 75px;
+  height: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.product_slider--toro .heading_style:after {
+  margin-left: -8px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .product_slider--toro .heading_style:before,
+  .product_slider--toro .heading_style:after {
+    display: none;
+  }
+}

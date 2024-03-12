@@ -7,18 +7,29 @@
   overflow: hidden;
 }
 
-.section-header {
-  text-align: center;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
-
-.section-header h3 {
+.section_header--toro h3 {
   color: #262626;
   margin: 0 0 12px;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 400;
   position: relative;
+}
+
+.products_grid--toro .heading_style:before,
+.products_grid--toro .heading_style:after {
+  content: "";
+  width: 75px;
+  height: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 767px) {
+  .products_grid--toro .heading_style:before,
+  .products_grid--toro .heading_style:after {
+    display: none;
+  }
 }
 
 .grid-items:not(.slick-slider) {
@@ -71,6 +82,7 @@
   color: #777;
   display: inline-block;
   text-decoration: none;
+  font-family: "Poppins";
 }
 
 .button-view-all-products a:hover {

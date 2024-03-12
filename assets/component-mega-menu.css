@@ -2,6 +2,10 @@
   position: static;
 }
 
+.mega-menu:hover{
+  color: #fc4f4f;
+}
+
 .mega-menu__content {
   background-color: rgb(var(--color-background));
   border-left: 0;
@@ -13,7 +17,12 @@
   padding-top: 3rem;
   position: absolute;
   right: 0;
-  top: 100%;
+  top: 75%;
+  z-index: 999999 !important;
+}
+
+.mega-menu__content:hover .header__active-menu-item{
+  color: #fc4f4f;
 }
 
 .shopify-section-header-sticky .mega-menu__content {
@@ -69,9 +78,8 @@
 }
 
 .mega-menu__link:hover,
-.mega-menu__link--active {
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
+.mega-menu__link--active:hover {
+  color: #fc4f4f;
 }
 
 .mega-menu__link--active:hover {
@@ -79,7 +87,10 @@
 }
 
 .mega-menu .mega-menu__list--condensed {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column !important;
 }
 
 .mega-menu__list--condensed .mega-menu__link {

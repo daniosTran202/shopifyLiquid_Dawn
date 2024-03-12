@@ -1,98 +1,3 @@
-{% comment %} <style>
-
-  .container {
-      margin-right: auto;
-      margin-left: auto;
-      padding-left: 15px;
-      padding-right: 15px;
-  } 
-
-  .tab-content>.active {
-      height: auto;
-  }
-
-  .tab-content>.tab-pane {
-    display: block;
-    overflow: hidden;
-  }
-
-  .section-header {
-    text-align: center;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-
-
-  .section-header h3 {
-    color: #262626;
-    margin: 0 0 12px;
-    font-size: 36px;
-    font-weight: 400;
-    position: relative;
-  }
-
-    .grid-items:not(.slick-slider) {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-}
-
-
-
-  @media screen and (min-width: 1200px){
-    .lg-grid-4-items .grid-item {
-        width: 25%;
-    }
-  }
-
-  @media screen and (min-width: 992px)and (max-width: 1200px){
-    .md-grid-4-items .grid-item {
-      width: 25%;
-    }
-  }
-  
-  @media screen and(min-width: 768px) and (max-width: 992px){
-     .sm-grid-3-items .grid-item {
-        width: 33.3333%;
-      }
-  }
-
-  @media screen and (max-width: 479px){
-    .mb-grid-1-items .grid-item {
-        width: 100%;
-    }
-    
-  }
-  
-  .button-view-all-products {
-    margin-top: 20px;
-  }
-  
-
-  .button-view-all-products a {
-    border-width: 2px;
-    border-style: solid;
-    font-size: 13px;
-    padding: 1em 3em;
-    line-height: 1.9;
-    color: #777;
-    display: inline-block;
-    text-decoration: none;
-  }
-
-   .button-view-all-products a:hover {
-    color: #fc4f4f;
-  }
-
-  
-</style> {% endcomment %}
 
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--grid_products.css' | asset_url | stylesheet_tag }}
@@ -100,8 +5,8 @@
 
 <div class="products_grid--toro animated animatedFadeInUp fadeInUp" style="margin: 0px 0px 50px;">
   <div class="container">
-      <div class="section-header text-center">
-        <h3 class="heading_style" style="font-size: 20px;letter-spacing: 2px;"><span>NEW ARRIVAL</span></h3>
+      <div class="section_header--toro text-center">
+        <h3 class="heading_style"><span>NEW ARRIVAL</span></h3>
       </div>
       <div class="tab-content">
         <div class="tab-pane active" >
@@ -118,18 +23,23 @@
                               <a href="" class="product__link" tabindex="0">
                                 {{ product.media[1]| image_url: width:400 |image_tag: class:"wp-post-image loading lazy", style:"display:block"}}
                                 {{ product.media[2]| image_url: width:400 |image_tag: class:"wp-alt-image loading lazy", style:"display:block"}}
-                               
-                                {% if product.tags contains "New" %}
-                                  <span class="label-product new">New</span>
-                                {% elsif product.tags contains "Hot" %}
-                                  <span class="label-product hot">Hot</span>
-                                {% else %}
-                                  <span style="display: none;"></span>
-                                {% endif %}
+
+
+                                <div style="{%- if section.settings.label_tags -%}display: none;{%- endif -%}">
+                                  {% if product.tags contains "New" %}
+                                    <span class="label-product new">New</span>
+                                  {% elsif product.tags contains "Hot" %}
+                                    <span class="label-product hot">Hot</span>
+                                  {% else %}
+                                    <span style="display: none;"></span>
+                                  {% endif %}
+
+                                  </div>
+                                
                               </a>
                           </div>
                       <div class="product_item_thumbnail_action product_item--action">
-                          <div class="wrap-addto">
+                          <div class="wrap-addto" style="{%- if section.settings.btn_action -%}display: none;{%- endif -%}">
                           <a href=""  class="globo-quick-view-button quickview  la-quickview-button" title="Quick view" tabindex="0"><span>Quick view</span></a>                    
                               <div class="gpw-action"><a class="add_wishlist  la-core-wishlist globo-add-to-wishlist"  title="Add to wishtlist" ><span>Add to wishtlist</span></a></div>                            
                               <div class="gpc-action"><a class="globo-add-to-compare"  title="Add to compare" ><span>Add to compare</span></a></div>
@@ -143,10 +53,10 @@
                       </div>
                       <div class="product_item--info">
                       <div class="product_item--info-inner text-center">
-                          <h2 class="product_item--title">
+                          <h2 class="product_item--title" >
                           <a href="" tabindex="0">{{ product.title }}</a>
                           </h2>
-                          <span class="price">{{ product.price | money }}</span>
+                          <span class="price" style="{%- if section.settings.original_price -%}display: none;{%- endif -%}">{{ product.price | money }}</span>
                       </div>
                       </div>
                   </div>  
@@ -170,6 +80,28 @@
             "type": "collection",
             "id": "grid_products_toro",
             "label": "Chose Collection to show on slideshow"
+        },
+        {
+          "type": "header",
+          "content": "Product Item Option"
+        },
+        {
+          "type": "checkbox",
+          "id": "original_price",
+          "default": false,
+          "label": "Show/Hide Original Price"
+        },
+       {
+          "type": "checkbox",
+          "id": "label_tags",
+          "label": "Show/Hide Label Tag",
+          "default": false
+        },
+       {
+          "type": "checkbox",
+          "id": "btn_action",
+          "label": "Show/Hide Product Action",
+          "default": false
         }
     ],
     "presets": [
@@ -178,5 +110,6 @@
         "category": "Collection"
       }
     ]
+    
   }
 {% endschema %}

@@ -116,11 +116,8 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
-            "image_height": 80,
             "image_background_position": "bottom",
-            "image_gradient_darkness": 60,
             "hero_heading": "CABLE - KNIT  NEW ARRIVALS",
-            "heading_font_size": "text-3xl md:text-4xl",
             "heading_color": "#ffffff"
           }
         }

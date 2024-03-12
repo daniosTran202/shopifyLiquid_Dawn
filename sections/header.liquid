@@ -339,9 +339,12 @@
   </header>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
+
+  
 {%- if settings.cart_type == "notification" -%}
   {%- render 'cart-notification', color_scheme: section.settings.color_scheme, desktop_menu_type: section.settings.menu_type_desktop -%}
 {%- endif -%}
+
 
 {% javascript %}
   class StickyHeader extends HTMLElement {
@@ -495,6 +498,28 @@
   </script>
 {%- endif -%}
 
+
+  <!-- Mega Menu Hover start -->
+{% if section.settings.hover %}
+  <script>
+    let items = document
+        .querySelector(".header__inline-menu")
+        .querySelectorAll("details");
+    items.forEach((item) => {
+        item.addEventListener("mouseover", () => {
+            item.setAttribute("open", true);
+            item.querySelector("summary").setAttribute("aria-expanded", "true");
+            item.addEventListener("mouseout", () => {
+                item.removeAttribute("open");
+                item.querySelector("summary").setAttribute("aria-expanded", "false");
+            });
+        });
+    });
+  </script>
+{% endif %}
+
+<!-- Mega hover end -->
+
 {% schema %}
 {
   "name": "t:sections.header.name",
@@ -576,6 +601,11 @@
       ],
       "default": "on-scroll-up",
       "label": "t:sections.header.settings.sticky_header_type.label"
+    },
+    { 
+      "type": "checkbox",
+      "id": "hover",
+      "label":"t:sections.header.settings.hover.label" 
     },
     {
       "type": "checkbox",

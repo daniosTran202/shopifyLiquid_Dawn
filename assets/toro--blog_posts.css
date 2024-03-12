@@ -4,46 +4,29 @@
   animation-name: fadeIn;
 }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.liquid-header {
-  text-align: center;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.blog_heading_style:before,
-.blog_heading_style:after {
+.blog_post--toro .heading_style:before,
+.blog_post--toro .heading_style:after {
   content: "";
   width: 75px;
   height: 1px;
   display: inline-block;
   vertical-align: middle;
-  background-color: #0000001a;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.blog_post--toro .heading_style:before{
+  margin-right: -8px !important;
+}
+
+.blog_post--toro .heading_style:after{
+  margin-left: -8px !important;
 }
 
 @media screen and (max-width: 767px) {
-  .blog_heading_style:before,
-  .blog_heading_style:after {
+  .blog_post--toro .heading_style:before,
+  .blog_post--toro .heading_style:after {
     display: none;
   }
-}
-
-.blog_heading_style span {
-  border-style: solid;
-  border-width: 1px 1px 1px 1px;
-  border-color: #0000001a;
-  padding: 15px 50px;
-  display: inline-block;
 }
 
 article {

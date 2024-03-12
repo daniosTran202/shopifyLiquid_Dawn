@@ -1,4 +1,4 @@
-.item.slideshow_item {
+  .item.slideshow_item {
   position: relative;
   width: 100% !important;
   overflow: hidden;
@@ -39,11 +39,11 @@
   margin-right: 8%;
 }
 
-.g-content-slider {
+.content_slider {
   animation-delay: 1s;
 }
 
-.g-content-slider h2 {
+.content_slider h2 {
   margin: -50px 0 50px !important;
 }
 
@@ -75,4 +75,5 @@
   margin: 0 0 15px 0;
   line-height: 1.2;
   letter-spacing: 2px;
+  font-family:"Poppins"
 }

@@ -1,148 +1,16 @@
+<style>
+  @import url('//fonts.googleapis.com/css?family=Alegreya+SC:400,400i,500,500i,700,700i&display=swap');
+  @import url('//fonts.googleapis.com/css?family=Alegreya:400,400i,500,500i,700,700i&display=swap');
+</style>
+
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--blog_posts.css' | asset_url | stylesheet_tag }}
 
-{% comment %} <style>
-* {
-    box-sizing: border-box;
-}
-
- .blog_post--toro{
-  margin: 0px 0px 50px; 
-   visibility: visible; 
-   animation-name: fadeIn;
-  }
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.liquid-header {
-  text-align: center;
-  overflow: hidden;
-  margin-bottom: 40px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.blog_heading_style:before, 
-.blog_heading_style:after {
-  content: "";
-  width: 75px;
-  height: 1px;
-  display: inline-block;
-  vertical-align: middle;
-  background-color: #0000001a;
-}
-
-  @media screen and (max-width: 767px){
-    .blog_heading_style:before, 
-    .blog_heading_style:after{
-      display:none;
-    }
-  }
-  
-.blog_heading_style span {
-  border-style: solid;
-  border-width: 1px 1px 1px 1px;
-  border-color: #0000001a;
-  padding: 15px 50px;
-  display: inline-block;
-}
-
-
-article {
-    display: block;
-}
-
-.blog_item{
-  margin-bottom: 20px;
-}
-  
-.blog_item_image img {
-  width: 100%;
-  height: auto;
-  vertical-align: middle;
-  display: inline-block;
-}
-
-
-.blog_item_infor {
-  background-color: #fff;
-  padding: 20px 0;
-  color: #777;
-}
-
-.blog_item_title {
-  margin: 0 0 15px;
-  font-weight: 600;
-  font-size: 32px;
-  font-family: "Alegreya",Sans-serif;
-}
-.blog_item_title a {
-  text-decoration: none;
-  color: #262626;
-}
-.blog_item_title:hover, .blog_item_title a:hover{
-  transition: all .35s ease ;
-  color: #fc4f4f;
-}
-
-
-.blog_author {
-  margin-bottom: 5px;
-}
-
-  
-.blog_author span {
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 5px;
-  font-size: 12px;
-}
-
-.blog_item_description {
-  line-height: 1.8;
-  margin-bottom: 15px;
-  padding: 5px 0 10px;
-  color: #777;
-  font-size: 16px;
-  font-weight: 300;
-}
-
-
-.blog_item_btn {
-  font-family: 'Poppins';
-  display: inline-block;
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 700;
-  color: #262626;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  border-style: solid;
-  border-width: 0px 0px 1px 0px;
-  border-color: #262626;
-  transition: all .25s ease-out;
-}
-.blog_item_btn:hover {
-  transition: all .35s ease ;
-  color: #fc4f4f;
-  border-color: #fc4f4f;
-}
-
-  
-</style> {% endcomment %}
-
-<div class="liquid-section toro_blog_grid animated animatedFadeInUp  fadeInUp">
+<div class="liquid-section toro_blog_grid animated animatedFadeInUp fadeInUp">
   <div class="blog_post--toro" >
   <div class="container">
-    <div class="liquid-header text-center">
-      <h3 class="blog_heading_style" style="font-size: 20px; letter-spacing: 2px;">
+    <div class="section_header--toro text-center">
+      <h3 class="heading_style" >
         <span>LATEST BLOG</span>
       </h3>
     </div>
@@ -199,10 +67,6 @@ article {
         "max": 10,
         "step": 1,
         "default": 2
-      },
-      {
-          "type": "header",
-          "name": "Choose Blog"
       },
       {
         "id":"new-blog",
