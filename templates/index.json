@@ -12,7 +12,7 @@
             "heading_color": "#000000",
             "button_url": "",
             "button_text": "SHOP NOW",
-            "button_background_color": "bg-white hover:bg-gray-200 text-black"
+            "button_background_color": "btn_slideshow_toro"
           }
         },
         "image_XNTKTk": {
@@ -24,7 +24,7 @@
             "heading_color": "#000000",
             "button_url": "",
             "button_text": "SHOP NOW",
-            "button_background_color": "bg-white hover:bg-gray-200 text-black"
+            "button_background_color": "btn_slideshow_toro"
           }
         }
       },
@@ -33,7 +33,6 @@
         "image_XNTKTk"
       ],
       "settings": {
-        "title": ""
       }
     },
     "banner_slider_toro_hgJaYm": {
@@ -43,7 +42,6 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/home10-banner-01.webp",
-            "image_background_position": "center",
             "heading_title": "CONTRAST COAT"
           }
         },
@@ -51,7 +49,6 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/home10-banner-02.webp",
-            "image_background_position": "center",
             "heading_title": "BIKER JACKET WITH PADDED SHOULDER"
           }
         },
@@ -59,7 +56,6 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/home10-banner-03.webp",
-            "image_background_position": "center",
             "heading_title": "CONTRAST COAT"
           }
         },
@@ -67,7 +63,6 @@
           "type": "image",
           "settings": {
             "image": "shopify:\/\/shop_images\/home10-banner-01.webp",
-            "image_background_position": "center",
             "heading_title": "BIKER JACKET WITH PADDED SHOULDER"
           }
         }
@@ -80,7 +75,7 @@
       ],
       "settings": {
         "heading_font_size": "16px",
-        "heading_color": "#ffffff"
+        "heading_color": "#fafafa"
       }
     },
     "products_gird_toro_KLkaKx": {
@@ -143,12 +138,16 @@
       "type": "latest_blog_toro",
       "settings": {
         "posts-range": 2,
-        "new-blog": "toro-blog"
+        "new-blog": "toro-blog",
+        "button_url": "",
+        "button_text": "READ MORE"
       }
     },
     "newsletter_toro_MYq73m": {
       "type": "newsletter_toro",
       "settings": {
+        "newsletter_title": "SIGN UP &amp; SAVE",
+        "newsletter_des": "Sale up to 20% off for your next purchase in this month!"
       }
     },
     "text_service_toro_7LFjye": {

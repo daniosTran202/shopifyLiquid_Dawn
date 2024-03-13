@@ -1,23 +1,29 @@
-
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--image_banner.css' | asset_url | stylesheet_tag }}
 
-
 {% for block in section.blocks %}
-    {% if block.settings.image != blank %}
-      <div class="liquid-section toro_single_banner">
-          <div class="toro_only_banner">
-            <div class="container">
-              <div class="toro_banner single_banner_background" style="display: block;background-size: cover;
-                 background-position: {{block.settings.image_background_position}};background-image: url('{{ block.settings.image | img_url: "1800x", crop: "center" }}');">
-              <div class="container text-center">
-                <h2 style="color: {{block.settings.heading_color}};" class="text-center font-extrabold text-center ">{{ block.settings.hero_heading }}</h2>
-              </div>
-            </div>
+  <div class="liquid-section toro_single_banner animated animatedFadeInUp fadeInUp">
+    <div class="toro_only_banner">
+      <div class="container">
+        <div
+          class="toro_banner single_banner_background"
+          {% if block.settings.image != blank %}
+            style="
+              display: block;background-size: cover;
+              background-position: {{block.settings.image_background_position}};
+              background-image: url('{{ block.settings.image | img_url: "1800x", crop: "center" }}');
+            "
+          {% endif %}
+        >
+          <div class="container text-center">
+            <h2 style="color: {{block.settings.heading_color}};" class="text-center font-extrabold text-center ">
+              {{ block.settings.hero_heading }}
+            </h2>
           </div>
         </div>
       </div>
-    {% endif %}
+    </div>
+  </div>
 {% endfor %}
 
 {% schema %}
@@ -38,7 +44,7 @@
             "id": "image",
             "label": "Image"
          },
-         
+
          {
             "type": "select",
             "id": "image_background_position",
@@ -58,7 +64,7 @@
             ],
             "default": "center"
          },
-        
+
          {
             "type": "header",
             "content": "Header Text Settings"
@@ -88,5 +94,3 @@
    }]
 }
 {% endschema %}
-
-

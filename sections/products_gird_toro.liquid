@@ -1,115 +1,124 @@
-
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--grid_products.css' | asset_url | stylesheet_tag }}
 
-
 <div class="products_grid--toro animated animatedFadeInUp fadeInUp" style="margin: 0px 0px 50px;">
   <div class="container">
-      <div class="section_header--toro text-center">
-        <h3 class="heading_style"><span>NEW ARRIVAL</span></h3>
-      </div>
-      <div class="tab-content">
-        <div class="tab-pane active" >
-          <div class="grid-items grid-space-30 xlg-grid-4-items lg-grid-4-items md-grid-4-items sm-grid-3-items xs-grid-2-items mb-grid-1-items">
+    <div class="section_header--toro text-center">
+      <h3 class="heading_style"><span>NEW ARRIVAL</span></h3>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane active">
+        <div class="grid-items grid-space-30 xlg-grid-4-items lg-grid-4-items md-grid-4-items sm-grid-3-items xs-grid-2-items mb-grid-1-items">
+          {% assign _collection = collections.grid_products_toro %}
+          {% for product in collections[section.settings.grid_products_toro].products %}
+            <div class="grid-item">
+              <div class="product_item--inner">
+                <div class="product_item--thumbnail">
+                  <div class="product_item--thumbnail-holder">
+                    <a href="" class="product__link" tabindex="0">
+                      {{
+                        product.media[1]
+                        | image_url: width: 400
+                        | image_tag: class: 'wp-post-image loading lazy', style: 'display:block'
+                      }}
+                      {{
+                        product.media[2]
+                        | image_url: width: 400
+                        | image_tag: class: 'wp-alt-image loading lazy', style: 'display:block'
+                      }}
 
-
-           {% assign _collection = collections['grid_products_toro'] %}
-            {% for product in collections[section.settings.grid_products_toro].products %}              
-
-                <div class="grid-item">
-                  <div class="product_item--inner">
-                      <div class="product_item--thumbnail">
-                          <div class="product_item--thumbnail-holder">
-                              <a href="" class="product__link" tabindex="0">
-                                {{ product.media[1]| image_url: width:400 |image_tag: class:"wp-post-image loading lazy", style:"display:block"}}
-                                {{ product.media[2]| image_url: width:400 |image_tag: class:"wp-alt-image loading lazy", style:"display:block"}}
-
-
-                                <div style="{%- if section.settings.label_tags -%}display: none;{%- endif -%}">
-                                  {% if product.tags contains "New" %}
-                                    <span class="label-product new">New</span>
-                                  {% elsif product.tags contains "Hot" %}
-                                    <span class="label-product hot">Hot</span>
-                                  {% else %}
-                                    <span style="display: none;"></span>
-                                  {% endif %}
-
-                                  </div>
-                                
-                              </a>
-                          </div>
-                      <div class="product_item_thumbnail_action product_item--action">
-                          <div class="wrap-addto" style="{%- if section.settings.btn_action -%}display: none;{%- endif -%}">
-                          <a href=""  class="globo-quick-view-button quickview  la-quickview-button" title="Quick view" tabindex="0"><span>Quick view</span></a>                    
-                              <div class="gpw-action"><a class="add_wishlist  la-core-wishlist globo-add-to-wishlist"  title="Add to wishtlist" ><span>Add to wishtlist</span></a></div>                            
-                              <div class="gpc-action"><a class="globo-add-to-compare"  title="Add to compare" ><span>Add to compare</span></a></div>
-                          <a href="" class="globo-add-to-cart-toro"  title="Add to cart" >
-                              <span>
-                              Add to cart
-                              </span>
-                          </a>
-                          </div>
+                      <div style="{%- if section.settings.label_tags -%}display: none;{%- endif -%}">
+                        {% if product.tags contains 'New' %}
+                          <span class="label-product new">New</span>
+                        {% elsif product.tags contains 'Hot' %}
+                          <span class="label-product hot">Hot</span>
+                        {% else %}
+                          <span style="display: none;"></span>
+                        {% endif %}
                       </div>
+                    </a>
+                  </div>
+                  <div class="product_item_thumbnail_action product_item--action">
+                    <div class="wrap-addto" style="{%- if section.settings.btn_action -%}display: none;{%- endif -%}">
+                      <a
+                        href=""
+                        class="globo-quick-view-button quickview  la-quickview-button"
+                        title="Quick view"
+                        tabindex="0"
+                        ><span>Quick view</span></a
+                      >
+                      <div class="gpw-action">
+                        <a class="add_wishlist  la-core-wishlist globo-add-to-wishlist" title="Add to wishtlist"
+                          ><span>Add to wishtlist</span></a
+                        >
                       </div>
-                      <div class="product_item--info">
-                      <div class="product_item--info-inner text-center">
-                          <h2 class="product_item--title" >
-                          <a href="" tabindex="0">{{ product.title }}</a>
-                          </h2>
-                          <span class="price" style="{%- if section.settings.original_price -%}display: none;{%- endif -%}">{{ product.price | money }}</span>
+                      <div class="gpc-action">
+                        <a class="globo-add-to-compare" title="Add to compare"><span>Add to compare</span></a>
                       </div>
-                      </div>
-                  </div>  
+                      <a href="" class="globo-add-to-cart-toro" title="Add to cart">
+                        <span> Add to cart </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="product_item--info">
+                  <div class="product_item--info-inner text-center">
+                    <h2 class="product_item--title">
+                      <a href="" tabindex="0">{{ product.title }}</a>
+                    </h2>
+                    <span class="price" style="{%- if section.settings.original_price -%}display: none;{%- endif -%}">
+                      {{- product.price | money -}}
+                    </span>
+                  </div>
+                </div>
               </div>
-
-
-            {% endfor %} 
-          </div>
+            </div>
+          {% endfor %}
         </div>
       </div>
+    </div>
     <div class="button-view-all-products text-center"><a href="">View all products</a></div>
   </div>
 </div>
 
-
 {% schema %}
-  {
-    "name": "Products Grid Toro",
-    "settings": [
-        {
-            "type": "collection",
-            "id": "grid_products_toro",
-            "label": "Chose Collection to show on slideshow"
-        },
-        {
-          "type": "header",
-          "content": "Product Item Option"
-        },
-        {
-          "type": "checkbox",
-          "id": "original_price",
-          "default": false,
-          "label": "Show/Hide Original Price"
-        },
-       {
-          "type": "checkbox",
-          "id": "label_tags",
-          "label": "Show/Hide Label Tag",
-          "default": false
-        },
-       {
-          "type": "checkbox",
-          "id": "btn_action",
-          "label": "Show/Hide Product Action",
-          "default": false
-        }
-    ],
-    "presets": [
+{
+  "name": "Products Grid Toro",
+  "settings": [
       {
-        "name": "Collection List Toro",
-        "category": "Collection"
-      }
-    ]
-    
-  }
+          "type": "collection",
+          "id": "grid_products_toro",
+          "label": "Chose Collection to show on slideshow"
+      },
+      {
+        "type": "header",
+        "content": "Product Item Option"
+      },
+      {
+      "type": "checkbox",
+      "id": "original_price",
+      "default": true,
+      "label": "Hide Original Price"
+    },
+   {
+      "type": "checkbox",
+      "id": "label_tags",
+      "label": "Hide Label Tag",
+      "default": true
+    },
+   {
+      "type": "checkbox",
+      "id": "btn_action",
+      "label": "Hide Product Action",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List Toro",
+      "category": "Collection"
+    }
+  ]
+
+}
 {% endschema %}

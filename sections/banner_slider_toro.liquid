@@ -1,48 +1,44 @@
-
-
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--banner_slider.css' | asset_url | stylesheet_tag }}
 
-
 <script>
-     $(document).ready(function () {
-      $(".slick_slider_banner").not('.slick-initialized').slick({
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        arrows: false,
-        dots: true,
-        draggable: true,
-        responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: false
-      
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            }
-          ]
-      });
-    });
-</script>
+   $(document).ready(function () {
+    $(".slick_slider_banner").not('.slick-initialized').slick({
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      infinite: true,
+      arrows: false,
+      dots: true,
+      draggable: true,
+      responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: false
 
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+    });
+  });
+</script>
 
 {%- if request.design_mode -%}
   <script>
@@ -63,7 +59,7 @@
                 slidesToScroll: 3,
                 infinite: true,
                 dots: false
-      
+
               }
             },
             {
@@ -84,136 +80,112 @@
       });
     });
     });
-
-   
-</script>
-  
+  </script>
 {%- endif -%}
-  
-  <div class="banner_slider_toro animated animatedFadeInUp  fadeInUp" style="margin: 0px 0px 100px;">
-    <div class="container">
-        <div class="slick_slider_banner banner_items grid-space-20 xlg-grid-3-items lg-grid-3-items md-grid-3-items sm-grid-3-items xs-grid-2-items mb-grid-1-items"> 
-       
-          {% for block in section.blocks %}
+
+<div class="banner_slider_toro animated animatedFadeInUp fadeInUp" style="margin: 0px 0px 100px;">
+  <div class="container">
+    <div class="slick_slider_banner banner_items grid-space-20 xlg-grid-3-items lg-grid-3-items md-grid-3-items sm-grid-3-items xs-grid-2-items mb-grid-1-items">
+      {% for block in section.blocks %}
+        <div class="banner_item banner_item_hover " style="width: 397px;">
+          <div class="col-banner">
             {% if block.settings.image != blank %}
-              <div class="banner_item banner_item_hover " style="width: 397px;" >
-                  <div class="col-banner">
-                    <div class="banner_item_image">
-                      {{ block.settings.image | image_url: width:397 | image_tag }}
-                    </div>
-                    <div class="banner_item_info">
-                      <div class="heading_title">
-                        <div class="banner_table_cell text-left">
-                          <h3 style="color: {{section.settings.heading_color}};font-size: {{section.settings.heading_font_size}};">{{ block.settings.heading_title }}</h3>
-                        </div>
-                      </div>
-                  </div>
+              <div class="banner_item_image">
+                {{ block.settings.image | image_url: width: 397 | image_tag }}
+              </div>
+            {% endif %}
+            <div class="banner_item_info">
+              <div class="heading_title">
+                <div class="banner_table_cell text-left">
+                  <h3 style="color: {{section.settings.heading_color}};font-size: {{section.settings.heading_font_size}};">
+                    {{ block.settings.heading_title }}
+                  </h3>
                 </div>
               </div>
-
-            {% endif %}
-          {% endfor %}
-          
+            </div>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
-
+  </div>
+</div>
 
 {% schema %}
-  {
-    "name": "Banner Slider Toro",
-    "settings": [
+{
+  "name": "Banner Slider Toro",
+  "settings": [
+   {
+        "type": "header",
+        "content": "Select Font-size"
+    },
+    {
+      "type": "radio",
+      "id": "heading_font_size",
+      "label": "Heading Font Size",
+      "options": [{
+            "value": "16px",
+            "label": "Small"
+         },
+         {
+            "value": "18px",
+            "label": "Medium"
+         },
+         {
+            "value": "20px",
+            "label": "Large"
+         },
+         {
+            "value": "24px",
+            "label": "XL"
+         },
+         {
+            "value": "32px",
+            "label": "2XL"
+         }
+      ],
+      "default": "16px"
+    },
      {
-          "type": "header",
-          "content": "Select Font-size"
-      },
-      {
-        "type": "radio",
-        "id": "heading_font_size",
-        "label": "Heading Font Size",
-        "options": [{
-              "value": "16px",
-              "label": "Small"
-           },
-           {
-              "value": "18px",
-              "label": "Medium"
-           },
-           {
-              "value": "20px",
-              "label": "Large"
-           },
-           {
-              "value": "24px",
-              "label": "XL"
-           },
-           {
-              "value": "32px",
-              "label": "2XL"
-           }
-        ],
-        "default": "16px"
-      },
-       {
-            "type": "color",
-            "id": "heading_color",
-            "label": "Heading Text Color",
-            "default": "#ffffff"
-         }
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Text Color",
+          "default": "#ffffff"
+       }
 
-    ],
-     "blocks": [{
-      "type": "image",
-      "name": "Banner Images",
-      "settings": [{
-            "type": "header",
-            "content": "Banner Image Item"
-         },
-         {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-         },
-         
-         {
-            "type": "select",
-            "id": "image_background_position",
-            "label": "Image Background Position",
-            "options": [{
-                  "value": "top",
-                  "label": "Top"
-               },
-               {
-                  "value": "center",
-                  "label": "Center"
-               },
-               {
-                  "value": "bottom",
-                  "label": "Bottom"
-               }
-            ],
-            "default": "center"
-         },
-         {
-            "type": "header",
-            "content": "Header Text Settings"
-         },
-        {
+  ],
+    "max_blocks": 5,
+   "blocks": [{
+    "type": "image",
+    "name": "Banner Images",
+    "settings": [{
           "type": "header",
-          "content": "Select Color Text"
-      },
-         {
-            "type": "text",
-            "id": "heading_title",
-            "label": "Heading Text"
-         }
-        
-      ]
-   }],
-    "presets": [
+          "content": "Banner Image Item"
+       },
+       {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+       },
+       {
+          "type": "header",
+          "content": "Header Text Settings"
+       },
       {
-      "name": "Banner Slider Toro"
-      }
+        "type": "header",
+        "content": "Select Color Text"
+    },
+       {
+          "type": "text",
+          "id": "heading_title",
+          "label": "Heading Text"
+       }
+
     ]
-  }
+ }],
+  "presets": [
+    {
+    "name": "Banner Slider Toro"
+    }
+  ]
+}
 {% endschema %}

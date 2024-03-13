@@ -1,42 +1,58 @@
-
-
 {{ 'toro-index.css' | asset_url | stylesheet_tag }}
 {{ 'toro--newsletter.css' | asset_url | stylesheet_tag }}
 
-<div class="liquid-section newsletter_toro_section animated animatedFadeInUp  fadeInUp">
-  <div class="toro_newsletter toro_newsletter_custom" >
-  <div class="container">
-    <div class="text-center">
-      <h2 class="newsletter_heading" >SIGN UP &amp; SAVE</h2>
-      <p>Sale up to 20% off for your next purchase in this month!</p>
-    </div>
-    <div class="newsletter_submit_info">
-      <form method="post" action="#" id="contact_form" accept-charset="UTF-8" class="newsletter_submit_form">
-        <div class="input-group">
-          <input type="email" name="email" id="email" class="globo-easy-mc-email field-no-label" value="" placeholder="Your email address…" required>
-          <span class="newsletter_submit_block">
-            <button type="submit" class="btn_subscribe_form" name="commit" id="subscribe">
-              <span>Subscribe</span>
-            </button>
-          </span>
-        </div>
-      </form>
+<div class="liquid-section newsletter_toro_section animated animatedFadeInUp fadeInUp">
+  <div class="toro_newsletter toro_newsletter_custom">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="newsletter_heading">{{ section.settings.newsletter_title }}</h2>
+        <p>{{ section.settings.newsletter_des }}</p>
+      </div>
+      <div class="newsletter_submit_info">
+        <form method="post" action="#" id="contact_form" accept-charset="UTF-8" class="newsletter_submit_form">
+          <div class="input-group">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="globo-easy-mc-email field-no-label"
+              value=""
+              placeholder="Your email address…"
+              required
+            >
+            <span class="newsletter_submit_block">
+              <button type="submit" class="btn_subscribe_form" name="commit" id="subscribe">
+                <span>Subscribe</span>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
 
-</div>
-
 {% schema %}
-  {
-    "name": "Newsletter Toro",
-    "settings": [],
-    "presets": [
+{
+  "name": "Newsletter Toro",
+  "settings": [
       {
-        "name": "Newsletter Toro"
-        
-      }
-    ]
-  }
-{% endschema %}
+          "type": "text",
+          "id": "newsletter_title",
+          "label": "Newsletter Title"
+       },
 
+      {
+          "type": "text",
+          "id": "newsletter_des",
+          "label": "Newsletter Description"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Newsletter Toro"
+
+    }
+  ]
+}
+{% endschema %}

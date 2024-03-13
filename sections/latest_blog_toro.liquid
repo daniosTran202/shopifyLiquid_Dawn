@@ -7,84 +7,95 @@
 {{ 'toro--blog_posts.css' | asset_url | stylesheet_tag }}
 
 <div class="liquid-section toro_blog_grid animated animatedFadeInUp fadeInUp">
-  <div class="blog_post--toro" >
-  <div class="container">
-    <div class="section_header--toro text-center">
-      <h3 class="heading_style" >
-        <span>LATEST BLOG</span>
-      </h3>
-    </div>
-    <div class="row">
+  <div class="blog_post--toro">
+    <div class="container">
+      <div class="section_header--toro text-center">
+        <h3 class="heading_style">
+          <span>LATEST BLOG</span>
+        </h3>
+      </div>
+      <div class="row">
+        {% assign blog = section.settings['new-blog'] %}
 
-      {% assign blog = section.settings.new-blog %}
-      
-      {% unless blog.articles_count == 0 %}
-        {%  for article in blog.articles  limit: section.settings.posts-range %}
+        {% unless blog.articles_count == 0 %}
+          {% for article in blog.articles limit: section.settings['posts-range'] %}
             <article class="col-md-6 col-sm-6 col-xs-12">
               <div class="blog_item">
                 <div class="blog_item_image">
-                  <a href="{{ article.url }}">
-                    {{ article.image | image_url: width: 570| image_tag: class: 'lazy', loading: 'lazy'  }}
-                  </a>
+                  {% if article.image != blank %}
+                    <a href="{{ article.url }}">
+                      {{ article.image | image_url: width: 570 | image_tag: class: 'lazy', loading: 'lazy' }}
+                    </a>
+                  {% endif %}
                 </div>
                 <div class="blog_item_infor">
-                  <h3 class="blog_item_title" ><a href="">{{ article.title }}</a></h3>
+                  <h3 class="blog_item_title">
+                    <a href="">{{ article.title }}</a>
+                  </h3>
                   <div class="blog_author">
                     <span>by {{ article.author }}, </span>
                     <span class="posted-on">
-                      <time datetime="2023-03-01T07:52:00Z">{{ article.created_at | date: "%m-%d-%Y" }}</time>
+                      <time datetime="2023-03-01T07:52:00Z">{{ article.created_at | date: '%m-%d-%Y' }}</time>
                     </span>
                   </div>
                   <div class="blog_item_description">
                     {{ article.content }}
                   </div>
-                  <a href="" class="blog_item_btn">READ MORE</a>
+
+                  <a href="{{ section.settings.button_url }}" class="blog_item_btn">
+                    {{- section.settings.button_text -}}
+                  </a>
                 </div>
               </div>
             </article>
-        {% endfor %}
-          
+          {% endfor %}
         {% endunless %}
-
+      </div>
     </div>
   </div>
 </div>
 
-</div>
-
-
-
 {% schema %}
-  {
-    "name": "Latest Blog Toro",
-    "settings": [
+{
+  "name": "Latest Blog Toro",
+  "settings": [
 
+    {
+      "id": "posts-range",
+      "type": "range",
+      "label": "Range",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "id":"new-blog",
+      "type": "blog",
+      "label":"Blog"
+    },
       {
-        "id": "posts-range",
-        "type": "range",
-        "label": "Range",
-        "min": 2,
-        "max": 10,
-        "step": 1,
-        "default": 2
-      },
-      {
-        "id":"new-blog",
-        "type": "blog",
-        "label":"Blog"
-      }
-    ],
-    "presets": [
-      {
-        "name": "Latest Blog Toro",
-        "category": "Posts"
-        
-      }
-    ]
-  }
+        "type": "header",
+        "content": "Button Settings"
+     },
+     {
+        "type": "url",
+        "id": "button_url",
+        "label": "Button URL"
+     },
+     {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button text",
+        "default": "READ MORE"
+     }
+  ],
+  "presets": [
+    {
+      "name": "Latest Blog Toro",
+      "category": "Posts"
 
-
-
-
-  
+    }
+  ]
+}
 {% endschema %}

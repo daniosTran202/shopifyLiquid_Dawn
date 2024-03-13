@@ -2,72 +2,71 @@
 {{ 'toro--text_service.css' | asset_url | stylesheet_tag }}
 
 <div class="liquid-section globo_text_support_2 animated animatedFadeInUp  fadeInUp">
-    <div class="text_service text_service-2" style="margin: 0px 0px 50px; background-color: rgb(255, 255, 255); visibility: visible; ">
-      <div class="container">
-        <div class="row ">
-
-          {% for block in section.blocks %}
+  <div
+    class="text_service text_service-2"
+    style="margin: 0px 0px 50px; background-color: rgb(255, 255, 255); visibility: visible; "
+  >
+    <div class="container">
+      <div class="row ">
+        {% for block in section.blocks %}
+          <div class="col-md-4 col-sm-6 col-xs-12" style="visibility: visible;">
             {% if block.settings.image != blank %}
-                <div class="col-md-4 col-sm-6 col-xs-12" style="visibility: visible;">
-                  <div class="img">
-
-                    {{ block.settings.image | image_url: width: auto | image_tag: class:"text_service_toro"}}
-                  </div>
-                  <div class="text">
-                    <h5>{{ block.settings.serviceTxt_title }}</h5>
-                    <p>{{ block.settings.serviceTxt_des }}</p>
-                  </div>
-                 </div>
-              {% endif %}
-            {% endfor %}
-          
-        </div>
+              <div class="img">
+                {{ block.settings.image | image_url: width: auto | image_tag: class: 'text_service_toro' }}
+              </div>
+            {% endif %}
+            <div class="text">
+              <h5>{{ block.settings.serviceTxt_title }}</h5>
+              <p>{{ block.settings.serviceTxt_des }}</p>
+            </div>
+          </div>
+        {% endfor %}
       </div>
+    </div>
   </div>
 </div>
 
 {% schema %}
-  {
-    "name": "Text Service Toro",
-    "settings": [],
-    "blocks": [
-      {
-        "type": "image",
-        "name": "Text Service Item",
-        "settings": [
-          {
-            "type": "header",
-            "content": "Banner Image"
-         },
-         {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-         },
-
-          {
-            "type": "header",
-            "content": "Header Text Settings"
-         },
-         {
-            "type": "text",
-            "id": "serviceTxt_title",
-            "label": "Service Text Title"
-         },
+{
+  "name": "Text Service Toro",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Text Service Item",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Banner Image"
+       },
+       {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+       },
 
         {
-            "type": "text",
-            "id": "serviceTxt_des",
-            "label": "Service Description"
-        }
-        ]
-      }
-    ],
-    "presets":[
-      {
-        "name":"Text Service Toro"
-      }
-    ]
-  }
-{% endschema %}
+          "type": "header",
+          "content": "Header Text Settings"
+       },
+       {
+          "type": "text",
+          "id": "serviceTxt_title",
+          "label": "Service Text Title"
+       },
 
+      {
+          "type": "text",
+          "id": "serviceTxt_des",
+          "label": "Service Description"
+      }
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Text Service Toro"
+    }
+  ]
+}
+{% endschema %}
